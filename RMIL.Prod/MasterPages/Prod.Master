@@ -1,0 +1,989 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Prod.master.cs" Inherits="RMIL.Prod.MasterPages.Prod" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>PRAN-RFL Group</title>
+
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link rel="shortcut icon" href="../assets/images/favicon.png" type="image/x-icon" />
+    <!-- Favicon -->
+    <link rel="apple-touch-icon-precomposed" href="../assets/images/apple-touch-icon-57-precomposed.png">
+    <!-- For iPhone -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/images/apple-touch-icon-114-precomposed.png">
+    <!-- For iPhone 4 Retina display -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/images/apple-touch-icon-72-precomposed.png">
+    <!-- For iPad -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/images/apple-touch-icon-144-precomposed.png">
+    <!-- For iPad Retina display -->
+
+    <!-- CORE CSS FRAMEWORK - START -->
+    <link href="../assets/plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/plugins/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/fonts/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/animate.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/plugins/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" type="text/css" />
+    <!-- CORE CSS FRAMEWORK - END -->
+
+    <!-- HEADER SCRIPTS INCLUDED ON THIS PAGE - START -->
+    <link href="../assets/plugins/jvectormap/jquery-jvectormap-2.0.1.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="../assets/plugins/icheck/skins/all.css" rel="stylesheet" type="text/css" media="screen" />
+
+    <link href="../assets/plugins/datatables/css/jquery.dataTables.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="../assets/plugins/datatables/extensions/TableTools/css/dataTables.tableTools.min.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="../assets/plugins/datatables/extensions/Responsive/css/dataTables.responsive.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="../assets/plugins/datatables/extensions/Responsive/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet" type="text/css" media="screen" />
+
+    <link href="../assets/plugins/jquery-ui/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="../assets/plugins/select2/select2.css" rel="stylesheet" type="text/css" media="screen" />
+    <!-- HEADER SCRIPTS INCLUDED ON THIS PAGE - END -->
+
+    <!-- CORE CSS TEMPLATE - START -->
+    <link href="../assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/responsive.css" rel="stylesheet" type="text/css" />
+    <!-- CORE CSS TEMPLATE - END -->
+    <!-- datepicker css - START -->
+    <link href="../assets/plugins/jquery-ui/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="../assets/plugins/datepicker/css/datepicker.css" rel="stylesheet" type="text/css" media="screen" />
+    <!-- datepicker css - END -->
+    <!-- Checkbox css - START -->
+    <link href="../assets/plugins/icheck/skins/all.css" rel="stylesheet" type="text/css" media="screen" />
+    <!-- Checkbox css - END -->
+    <link href="../j/bootstrap-multiselect.css" rel="stylesheet" />
+    <script src="../j/bootstrap-multiselect.js"></script>
+    <!-- Menu Active CSS Start -->
+    <style type="text/css">
+        .active1 {
+            background-color: #006600;
+            color: #ffffff;
+            font-weight: bold;
+        }
+    </style>
+    <!-- Menu Active CSS End -->
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class=" ">
+    <!-- START TOPBAR -->
+    <div class='page-topbar '>
+        <div class='logo-area'>
+        </div>
+        <div class='quick-area'>
+            <div class='pull-left'>
+                <ul class="info-menu left-links list-inline list-unstyled">
+                    <li class="sidebar-toggle-wrap">
+                        <a href="#" data-toggle="sidebar" class="sidebar_toggle">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </li>
+                    <li class="message-toggle-wrapper">
+                        <a href="#" data-toggle="dropdown" class="toggle">
+                            <i class="fa fa-envelope"></i>
+                            <span class="badge badge-accent">7</span>
+                        </a>
+                        <ul class="dropdown-menu messages animated fadeIn">
+
+                            <li class="list">
+
+                                <ul class="dropdown-menu-list list-unstyled ps-scrollbar">
+                                    <li class="unread status-available">
+                                        <a href="javascript:;">
+                                            <div class="user-img">
+                                                <img src="../data/profile/avatar-1.png" alt="user-image" class="img-circle img-inline" />
+                                            </div>
+                                            <div>
+                                                <span class="name">
+                                                    <strong>Clarine Vassar</strong>
+                                                    <span class="time small">- 15 mins ago</span>
+                                                    <span class="profile-status available pull-right"></span>
+                                                </span>
+                                                <span class="desc small">Sometimes it takes a lifetime to win a battle.
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class=" status-away">
+                                        <a href="javascript:;">
+                                            <div class="user-img">
+                                                <img src="../data/profile/avatar-2.png" alt="user-image" class="img-circle img-inline" />
+                                            </div>
+                                            <div>
+                                                <span class="name">
+                                                    <strong>Brooks Latshaw</strong>
+                                                    <span class="time small">- 45 mins ago</span>
+                                                    <span class="profile-status away pull-right"></span>
+                                                </span>
+                                                <span class="desc small">Sometimes it takes a lifetime to win a battle.
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class=" status-busy">
+                                        <a href="javascript:;">
+                                            <div class="user-img">
+                                                <img src="../data/profile/avatar-3.png" alt="user-image" class="img-circle img-inline" />
+                                            </div>
+                                            <div>
+                                                <span class="name">
+                                                    <strong>Clementina Brodeur</strong>
+                                                    <span class="time small">- 1 hour ago</span>
+                                                    <span class="profile-status busy pull-right"></span>
+                                                </span>
+                                                <span class="desc small">Sometimes it takes a lifetime to win a battle.
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class=" status-offline">
+                                        <a href="javascript:;">
+                                            <div class="user-img">
+                                                <img src="../data/profile/avatar-4.png" alt="user-image" class="img-circle img-inline" />
+                                            </div>
+                                            <div>
+                                                <span class="name">
+                                                    <strong>Carri Busey</strong>
+                                                    <span class="time small">- 5 hours ago</span>
+                                                    <span class="profile-status offline pull-right"></span>
+                                                </span>
+                                                <span class="desc small">Sometimes it takes a lifetime to win a battle.
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class=" status-offline">
+                                        <a href="javascript:;">
+                                            <div class="user-img">
+                                                <img src="../data/profile/avatar-5.png" alt="user-image" class="img-circle img-inline" />
+                                            </div>
+                                            <div>
+                                                <span class="name">
+                                                    <strong>Melissa Dock</strong>
+                                                    <span class="time small">- Yesterday</span>
+                                                    <span class="profile-status offline pull-right"></span>
+                                                </span>
+                                                <span class="desc small">Sometimes it takes a lifetime to win a battle.
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class=" status-available">
+                                        <a href="javascript:;">
+                                            <div class="user-img">
+                                                <img src="../data/profile/avatar-1.png" alt="user-image" class="img-circle img-inline" />
+                                            </div>
+                                            <div>
+                                                <span class="name">
+                                                    <strong>Verdell Rea</strong>
+                                                    <span class="time small">- 14th Mar</span>
+                                                    <span class="profile-status available pull-right"></span>
+                                                </span>
+                                                <span class="desc small">Sometimes it takes a lifetime to win a battle.
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class=" status-busy">
+                                        <a href="javascript:;">
+                                            <div class="user-img">
+                                                <img src="../data/profile/avatar-2.png" alt="user-image" class="img-circle img-inline" />
+                                            </div>
+                                            <div>
+                                                <span class="name">
+                                                    <strong>Linette Lheureux</strong>
+                                                    <span class="time small">- 16th Mar</span>
+                                                    <span class="profile-status busy pull-right"></span>
+                                                </span>
+                                                <span class="desc small">Sometimes it takes a lifetime to win a battle.
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class=" status-away">
+                                        <a href="javascript:;">
+                                            <div class="user-img">
+                                                <img src="../data/profile/avatar-3.png" alt="user-image" class="img-circle img-inline" />
+                                            </div>
+                                            <div>
+                                                <span class="name">
+                                                    <strong>Araceli Boatright</strong>
+                                                    <span class="time small">- 16th Mar</span>
+                                                    <span class="profile-status away pull-right"></span>
+                                                </span>
+                                                <span class="desc small">Sometimes it takes a lifetime to win a battle.
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="external">
+                                <a href="javascript:;">
+                                    <span>Read All Messages</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </li>
+                    <li class="notify-toggle-wrapper">
+                        <a href="#" data-toggle="dropdown" class="toggle">
+                            <i class="fa fa-bell"></i>
+                            <span class="badge badge-accent">3</span>
+                        </a>
+                        <ul class="dropdown-menu notifications animated fadeIn">
+                            <li class="total">
+                                <span class="small">You have <strong>3</strong> new notifications.
+                                <a href="javascript:;" class="pull-right">Mark all as Read</a>
+                                </span>
+                            </li>
+                            <li class="list">
+
+                                <ul class="dropdown-menu-list list-unstyled ps-scrollbar">
+                                    <li class="unread available">
+                                        <!-- available: success, warning, info, error -->
+                                        <a href="javascript:;">
+                                            <div class="notice-icon">
+                                                <i class="fa fa-check"></i>
+                                            </div>
+                                            <div>
+                                                <span class="name">
+                                                    <strong>Server needs to reboot</strong>
+                                                    <span class="time small">15 mins ago</span>
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="unread away">
+                                        <!-- available: success, warning, info, error -->
+                                        <a href="javascript:;">
+                                            <div class="notice-icon">
+                                                <i class="fa fa-envelope"></i>
+                                            </div>
+                                            <div>
+                                                <span class="name">
+                                                    <strong>45 new messages</strong>
+                                                    <span class="time small">45 mins ago</span>
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class=" busy">
+                                        <!-- available: success, warning, info, error -->
+                                        <a href="javascript:;">
+                                            <div class="notice-icon">
+                                                <i class="fa fa-times"></i>
+                                            </div>
+                                            <div>
+                                                <span class="name">
+                                                    <strong>Server IP Blocked</strong>
+                                                    <span class="time small">1 hour ago</span>
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class=" offline">
+                                        <!-- available: success, warning, info, error -->
+                                        <a href="javascript:;">
+                                            <div class="notice-icon">
+                                                <i class="fa fa-user"></i>
+                                            </div>
+                                            <div>
+                                                <span class="name">
+                                                    <strong>10 Orders Shipped</strong>
+                                                    <span class="time small">5 hours ago</span>
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class=" offline">
+                                        <!-- available: success, warning, info, error -->
+                                        <a href="javascript:;">
+                                            <div class="notice-icon">
+                                                <i class="fa fa-user"></i>
+                                            </div>
+                                            <div>
+                                                <span class="name">
+                                                    <strong>New Comment on blog</strong>
+                                                    <span class="time small">Yesterday</span>
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class=" available">
+                                        <!-- available: success, warning, info, error -->
+                                        <a href="javascript:;">
+                                            <div class="notice-icon">
+                                                <i class="fa fa-check"></i>
+                                            </div>
+                                            <div>
+                                                <span class="name">
+                                                    <strong>Great Speed Notify</strong>
+                                                    <span class="time small">14th Mar</span>
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class=" busy">
+                                        <!-- available: success, warning, info, error -->
+                                        <a href="javascript:;">
+                                            <div class="notice-icon">
+                                                <i class="fa fa-times"></i>
+                                            </div>
+                                            <div>
+                                                <span class="name">
+                                                    <strong>Team Meeting at 6PM</strong>
+                                                    <span class="time small">16th Mar</span>
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                            </li>
+
+                            <li class="external">
+                                <a href="javascript:;">
+                                    <span>Read All Notifications</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="hidden-sm hidden-xs searchform">
+                        <form action="ui-search.html" method="post">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-search"></i>
+                                </span>
+                                <input type="text" class="form-control animated fadeIn" placeholder="Search & Enter">
+                            </div>
+                            <input type='submit' value="">
+                        </form>
+                    </li>
+                </ul>
+            </div>
+            <div class='pull-right'>
+                <ul class="info-menu right-links list-inline list-unstyled">
+                    <li class="profile">
+                        <a href="#" data-toggle="dropdown" class="toggle">
+                            <img runat="server" src="" id="userRoundImage" alt="user-image" class="img-circle img-inline" />
+                            <span>
+                                <asp:Label ID="lblUsername" runat="server" Text=""></asp:Label>
+                                <i class="fa fa-angle-down"></i></span>
+                        </a>
+                        <ul class="dropdown-menu profile animated fadeIn">
+                            <li>
+                                <a href="../Account/ChangePasswordByUser.aspx">
+                                    <i class="fa fa-wrench"></i>
+                                    Change Password
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../Account/Profile.aspx">
+                                    <i class="fa fa-user"></i>
+                                    Profile
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#help">
+                                    <i class="fa fa-info"></i>
+                                    Help
+                                </a>
+                            </li>
+                            <li class="last">
+                                <a href="../Account/logout.aspx">
+                                    <i class="fa fa-lock"></i>
+                                    Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="chat-toggle-wrapper">
+                        <a href="#" data-toggle="chatbar" class="toggle_chat">
+                            <i class="fa fa-comments"></i>
+                            <span class="badge badge-accent">9</span>
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- END TOPBAR -->
+    <!-- START CONTAINER -->
+    <div class="page-container row-fluid container-fluid">
+        <form id="form1" runat="server">
+            <!-- SIDEBAR - START -->
+            <div class="page-sidebar pagescroll">
+                <!-- MAIN MENU - START -->
+                <div class="page-sidebar-wrapper" id="main-menu-wrapper" style="background-color: #ffffcc">
+                    <!-- USER INFO - START -->
+                    <div class="profile-info row">
+                        <div class="profile-image col-xs-4">
+                            <a href="../Account/Profile.aspx">
+                                <img runat="server" id="userRoundImage1" alt="" src="" class="img-responsive img-circle" />
+                            </a>
+                        </div>
+                        <div class="profile-details col-xs-8">
+                            <h3>
+                                <a href="../Account/Profile.aspx">
+                                    <asp:Label ID="lblUsername1" runat="server" Text=""></asp:Label></a>
+                                <!-- Available statuses: online, idle, busy, away and offline -->
+                                <span class="profile-status online"></span>
+                            </h3>
+                            <p class="profile-title">
+                                <asp:Label ID="lblDesg" runat="server" Text=""></asp:Label>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- USER INFO - END -->
+
+                    <ul class='wraplist'>
+                        <li class='menusection'>Main</li>
+                        <li class="">
+                            <a href="javascript:;">
+                                <i class="fa fa-dashboard"></i>
+                                <span class="title">Dashboard</span>
+                                <span class="arrow "></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a class="" href="../Dashboard/Index.aspx">Production Summary</a>
+                                </li>
+                                <li>
+                                    <a class="" href="../Dashboard/TarVsPr.aspx">Target Vs Production</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <%-- <li class="open">
+                            <a href="../Dashboard/Index.aspx">
+                                <i class="fa fa-dashboard"></i>
+                                <span class="title">Dashboard</span>
+                            </a>
+                        </li>--%>
+                        <li class='menusection'>Page Kits</li>
+                        <li class="">
+                            <a href="javascript:;">
+                                <i class="fa fa-lock"></i>
+                                <span class="title">User Management</span>
+                                <span class="arrow "></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <asp:Repeater ID="user_setup" runat="server">
+                                    <HeaderTemplate>
+                                        <ul class="my-menu">
+                                    </HeaderTemplate>
+                                    <ItemTemplate>
+                                        <li>
+                                            <a href='<%# Eval("href_li")%>'>
+                                                <%# Eval("DisplayText")%></a>
+                                        </li>
+                                    </ItemTemplate>
+                                    <FooterTemplate>
+                                        </ul>
+                                    </FooterTemplate>
+                                </asp:Repeater>
+                            </ul>
+                            <%--<ul class="sub-menu">
+                                <li>
+                                    <a class="" href="../Account/CreateUser.aspx">Create User</a>
+                                </li>
+                                <li>
+                                    <a class="" href="../Account/UserTypeSetup.aspx">User Role</a>
+                                </li>
+                                 <li>
+                                    <a class="" href="../SetupPages/UwMenuPer.aspx">Menu Permission</a>
+                                </li>
+                                <li>
+                                    <a class="" href="../SetupPages/DepartmentSetup.aspx">Department</a>
+                                </li>
+                                <li>
+                                    <a class="" href="../SetupPages/DesignationSetup.aspx">Designation</a>
+                                </li>
+                                <li>
+                                    <a class="" href="../Account/ResetPassword.aspx">Reset Password</a>
+                                </li>
+                            </ul>--%>
+                        </li>
+                        <li class='menusection'>Forms</li>
+                        <li class="">
+                            <a href="javascript:;">
+                                <i class="fa fa-check-square-o"></i>
+                                <span class="title">Setup Management</span>
+                                <span class="arrow "></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <asp:Repeater ID="setup_setup" runat="server">
+                                    <HeaderTemplate>
+                                        <ul class="my-menu">
+                                    </HeaderTemplate>
+                                    <ItemTemplate>
+                                        <li>
+                                            <a href='<%# Eval("href_li")%>'>
+                                                <%# Eval("DisplayText")%></a>
+                                        </li>
+                                    </ItemTemplate>
+                                    <FooterTemplate>
+                                        </ul>
+                                    </FooterTemplate>
+                                </asp:Repeater>
+                            </ul>
+                            <%--<ul class="sub-menu">
+                                <li>
+                                    <a class="" href="../SetupPages/CategorySetup.aspx">Product Group</a>
+                                </li>
+                                <li>
+                                    <a class="" href="../SetupPages/ProductSetup.aspx">Product</a>
+                                </li>
+                                <li>
+                                    <a class="" href="../SetupPages/ModelSetup.aspx">Product Model</a>
+                                </li>
+                                <li>
+                                    <a class="" href="../SetupPages/LineSetup.aspx">Line</a>
+                                </li>
+                                <li>
+                                    <a class="" href="../SetupPages/UserWiseLine.aspx">User Wise Line</a>
+                                </li>
+                                <li>
+                                    <a class="" href="../SetupPages/QcStepSetup.aspx">QC Step Setup</a>
+                                </li>
+                                <li>
+                                    <a class="" href="../SetupPages/QcPointSetup.aspx">QC Points Setup</a>
+                                </li>
+                                <li>
+                                    <a class="" href="../SetupPages/QcPointAsnSetup.aspx">QC Points Assign</a>
+                                </li>
+                                <li>
+                                    <a class="" href="../SetupPages/QcMoveSetup.aspx">QC Move</a>
+                                </li>
+                                <li>
+                                    <a class="" href="../SetupPages/QcSwitchSetup.aspx">QC Switch</a>
+                                </li>
+                                <li>
+                                    <a class="" href="../SetupPages/UserWiseStep.aspx">User Wise Step</a>
+                                </li>
+                                <li>
+                                    <a class="" href="../SetupPages/MenuSetup.aspx">Menu</a>
+                                </li>
+                            </ul>--%>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;">
+                                <i class="fa fa-suitcase"></i>
+                                <span class="title">Production Management</span>
+                                <span class="arrow "></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <asp:Repeater ID="prod_menu" runat="server">
+                                    <HeaderTemplate>
+                                        <ul class="my-menu">
+                                    </HeaderTemplate>
+                                    <ItemTemplate>
+                                        <li>
+                                            <a href='<%# Eval("href_li")%>'>
+                                                <%# Eval("DisplayText")%></a>
+                                        </li>
+                                    </ItemTemplate>
+                                    <FooterTemplate>
+                                        </ul>
+                                    </FooterTemplate>
+                                </asp:Repeater>
+                            </ul>
+                            <%--<ul class="sub-menu">
+                                <li>
+                                    <a class="" href="../Production/ProdTargetEntry.aspx">Production Targer</a>
+                                </li>
+                                <li>
+                                    <a class="" href="../Production/RmProduction.aspx">RMIL Production</a>
+                                </li>
+                                <li>
+                                    <a class="" href="../Production/BarcodeSearch.aspx">Search Barcode</a>
+                                </li>
+                                <li>
+                                    <a class="" href="../SetupPages/Upload.aspx">Download Barcode Font</a>
+                                </li>
+                            </ul>--%>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;">
+                                <i class="fa fa-suitcase"></i>
+                                <span class="title">QC Management</span>
+                                <span class="arrow "></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <asp:Repeater ID="qc_menu" runat="server">
+                                    <HeaderTemplate>
+                                        <ul class="my-menu">
+                                    </HeaderTemplate>
+                                    <ItemTemplate>
+                                        <li>
+                                            <a href='<%# Eval("href_li")%>'>
+                                                <%# Eval("DisplayText")%></a>
+                                        </li>
+                                    </ItemTemplate>
+                                    <FooterTemplate>
+                                        </ul>
+                                    </FooterTemplate>
+                                </asp:Repeater>
+                            </ul>
+                            <%--<ul class="sub-menu">
+                                <li>
+                                    <a class="" href="../QC/RmilQc.aspx">QC Test</a>
+                                </li>
+                            </ul>--%>
+                        </li>
+                        <li class='menusection'>Report</li>
+                        <li class="">
+                            <a href="javascript:;">
+                                <i class="fa fa-envelope"></i>
+                                <span class="title">Report Management</span>
+                                <span class="arrow "></span><span class="label label-accent">1</span>
+                            </a>
+                            <ul class="sub-menu">
+                                <asp:Repeater ID="report_menu" runat="server">
+                                    <HeaderTemplate>
+                                        <ul class="my-menu">
+                                    </HeaderTemplate>
+                                    <ItemTemplate>
+                                        <li>
+                                            <a href='<%# Eval("href_li")%>'>
+                                                <%# Eval("DisplayText")%></a>
+                                        </li>
+                                    </ItemTemplate>
+                                    <FooterTemplate>
+                                        </ul>
+                                    </FooterTemplate>
+                                </asp:Repeater>
+                            </ul>
+                            <%-- <ul class="sub-menu">
+                                <li>
+                                    <a class="" href="../Reports/RptQcHist.aspx">QC Report</a>
+                                </li>
+                            </ul>--%>
+                        </li>
+                    </ul>
+                    <div class="menustats">
+                        <h5>Project Progress</h5>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
+                            </div>
+                        </div>
+                        <h5>Target Achieved</h5>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-accent" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- MAIN MENU - END -->
+            </div>
+            <!--  SIDEBAR - END -->
+
+
+            <!-- START CONTENT -->
+            <section id="main-content" class=" ">
+                <section class="wrapper main-wrapper row" style=''>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </section>
+            </section>
+            <!-- END CONTENT -->
+        </form>
+
+        <div class="page-chatapi hideit">
+            <div class="search-bar">
+                <input type="text" placeholder="Search" class="form-control">
+            </div>
+            <div class="chat-wrapper">
+                <h4 class="group-head">Groups</h4>
+                <ul class="group-list list-unstyled">
+                    <li class="group-row">
+                        <div class="group-status available">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                        <div class="group-info">
+                            <h4><a href="#">Work</a></h4>
+                        </div>
+                    </li>
+                    <li class="group-row">
+                        <div class="group-status away">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                        <div class="group-info">
+                            <h4><a href="#">Friends</a></h4>
+                        </div>
+                    </li>
+                </ul>
+                <h4 class="group-head">Favourites</h4>
+                <ul class="contact-list">
+                    <li class="user-row " id='chat_user_1' data-user-id='1'>
+                        <div class="user-img">
+                            <a href="#">
+                                <img src="../data/profile/avatar-1.png" alt=""></a>
+                        </div>
+                        <div class="user-info">
+                            <h4><a href="#">Clarine Vassar</a></h4>
+                            <span class="status available" data-status="available">Available</span>
+                        </div>
+                        <div class="user-status available">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                    </li>
+                    <li class="user-row " id='chat_user_2' data-user-id='2'>
+                        <div class="user-img">
+                            <a href="#">
+                                <img src="../data/profile/avatar-2.png" alt=""></a>
+                        </div>
+                        <div class="user-info">
+                            <h4><a href="#">Brooks Latshaw</a></h4>
+                            <span class="status away" data-status="away">Away</span>
+                        </div>
+                        <div class="user-status away">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                    </li>
+                    <li class="user-row " id='chat_user_3' data-user-id='3'>
+                        <div class="user-img">
+                            <a href="#">
+                                <img src="../data/profile/avatar-3.png" alt=""></a>
+                        </div>
+                        <div class="user-info">
+                            <h4><a href="#">Clementina Brodeur</a></h4>
+                            <span class="status busy" data-status="busy">Busy</span>
+                        </div>
+                        <div class="user-status busy">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                    </li>
+
+                </ul>
+                <h4 class="group-head">More Contacts</h4>
+                <ul class="contact-list">
+                    <li class="user-row " id='chat_user_4' data-user-id='4'>
+                        <div class="user-img">
+                            <a href="#">
+                                <img src="../data/profile/avatar-4.png" alt=""></a>
+                        </div>
+                        <div class="user-info">
+                            <h4><a href="#">Carri Busey</a></h4>
+                            <span class="status offline" data-status="offline">Offline</span>
+                        </div>
+                        <div class="user-status offline">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                    </li>
+                    <li class="user-row " id='chat_user_5' data-user-id='5'>
+                        <div class="user-img">
+                            <a href="#">
+                                <img src="../data/profile/avatar-5.png" alt=""></a>
+                        </div>
+                        <div class="user-info">
+                            <h4><a href="#">Melissa Dock</a></h4>
+                            <span class="status offline" data-status="offline">Offline</span>
+                        </div>
+                        <div class="user-status offline">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                    </li>
+                    <li class="user-row " id='chat_user_6' data-user-id='6'>
+                        <div class="user-img">
+                            <a href="#">
+                                <img src="../data/profile/avatar-1.png" alt=""></a>
+                        </div>
+                        <div class="user-info">
+                            <h4><a href="#">Verdell Rea</a></h4>
+                            <span class="status available" data-status="available">Available</span>
+                        </div>
+                        <div class="user-status available">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                    </li>
+                    <li class="user-row " id='chat_user_7' data-user-id='7'>
+                        <div class="user-img">
+                            <a href="#">
+                                <img src="../data/profile/avatar-2.png" alt=""></a>
+                        </div>
+                        <div class="user-info">
+                            <h4><a href="#">Linette Lheureux</a></h4>
+                            <span class="status busy" data-status="busy">Busy</span>
+                        </div>
+                        <div class="user-status busy">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                    </li>
+                    <li class="user-row " id='chat_user_8' data-user-id='8'>
+                        <div class="user-img">
+                            <a href="#">
+                                <img src="../data/profile/avatar-3.png" alt=""></a>
+                        </div>
+                        <div class="user-info">
+                            <h4><a href="#">Araceli Boatright</a></h4>
+                            <span class="status away" data-status="away">Away</span>
+                        </div>
+                        <div class="user-status away">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                    </li>
+                    <li class="user-row " id='chat_user_9' data-user-id='9'>
+                        <div class="user-img">
+                            <a href="#">
+                                <img src="../data/profile/avatar-4.png" alt=""></a>
+                        </div>
+                        <div class="user-info">
+                            <h4><a href="#">Clay Peskin</a></h4>
+                            <span class="status busy" data-status="busy">Busy</span>
+                        </div>
+                        <div class="user-status busy">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                    </li>
+                    <li class="user-row " id='chat_user_10' data-user-id='10'>
+                        <div class="user-img">
+                            <a href="#">
+                                <img src="../data/profile/avatar-5.png" alt=""></a>
+                        </div>
+                        <div class="user-info">
+                            <h4><a href="#">Loni Tindall</a></h4>
+                            <span class="status away" data-status="away">Away</span>
+                        </div>
+                        <div class="user-status away">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                    </li>
+                    <li class="user-row " id='chat_user_11' data-user-id='11'>
+                        <div class="user-img">
+                            <a href="#">
+                                <img src="../data/profile/avatar-1.png" alt=""></a>
+                        </div>
+                        <div class="user-info">
+                            <h4><a href="#">Tanisha Kimbro</a></h4>
+                            <span class="status idle" data-status="idle">Idle</span>
+                        </div>
+                        <div class="user-status idle">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                    </li>
+                    <li class="user-row " id='chat_user_12' data-user-id='12'>
+                        <div class="user-img">
+                            <a href="#">
+                                <img src="../data/profile/avatar-2.png" alt=""></a>
+                        </div>
+                        <div class="user-info">
+                            <h4><a href="#">Jovita Tisdale</a></h4>
+                            <span class="status idle" data-status="idle">Idle</span>
+                        </div>
+                        <div class="user-status idle">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="chatapi-windows ">
+        </div>
+
+    </div>
+    <!-- END CONTAINER -->
+
+    <!-- CORE JS FRAMEWORK - START -->
+    <script src="../assets/js/jquery-1.11.2.min.js" type="text/javascript"></script>
+    <script src="../assets/js/jquery.easing.min.js" type="text/javascript"></script>
+    <script src="../assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../assets/plugins/pace/pace.min.js" type="text/javascript"></script>
+    <script src="../assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js" type="text/javascript"></script>
+    <script src="../assets/plugins/viewport/viewportchecker.js" type="text/javascript"></script>
+    <script>window.jQuery || document.write('<script src="../assets/js/jquery-1.11.2.min.js"><\/script>');</script>
+    <!-- CORE JS FRAMEWORK - END -->
+
+    <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - START -->
+    <!-- datepicker js - START -->
+    <script src="../assets/plugins/jquery-ui/smoothness/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="../assets/plugins/datepicker/js/datepicker.js" type="text/javascript"></script>
+    <!-- datepicker js - END -->
+    <!-- Validation - START -->
+    <script src="../assets/plugins/jquery-validation/js/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="../assets/plugins/jquery-validation/js/additional-methods.min.js" type="text/javascript"></script>
+    <script src="../assets/js/form-validation.js" type="text/javascript"></script>
+    <!-- Validation - END -->
+    <!-- Data Table - START -->
+    <script src="../assets/plugins/datatables/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="../assets/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js" type="text/javascript"></script>
+    <script src="../assets/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js" type="text/javascript"></script>
+    <script src="../assets/plugins/datatables/extensions/Responsive/bootstrap/3/dataTables.bootstrap.js" type="text/javascript"></script>
+    <!-- Data Table - END -->
+    <!-- Select2 - START -->
+    <script src="../assets/plugins/jquery-ui/smoothness/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="../assets/plugins/select2/select2.min.js" type="text/javascript"></script>
+    <!-- Select2 - END -->
+    <!-- Form Wizard - START -->
+    <script src="../assets/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js" type="text/javascript"></script>
+    <!-- Form Wizard - END -->
+    <!-- Check Box - START -->
+    <script src="../assets/plugins/autosize/autosize.min.js" type="text/javascript"></script>
+    <script src="../assets/plugins/icheck/icheck.min.js" type="text/javascript"></script>
+    <!-- Check Box - END -->
+    <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END -->
+
+    <!-- CORE TEMPLATE JS - START -->
+    <script src="../assets/js/scripts.js" type="text/javascript"></script>
+    <!-- END CORE TEMPLATE JS - END -->
+    <!-- Pie Chart JS - START -->
+    <!-- Chart js - START -->
+    <script src="../assets/plugins/chartjs-chart/Chart.min.js" type="text/javascript"></script>
+    <script src="../assets/js/chart-chartjs.js" type="text/javascript"></script>
+    <!-- Chart js - END -->
+
+    <!-- Dashboard Main JS - START -->
+    <script type="text/javascript" src="../js/flot/jquery.flot.js"></script>
+    <script type="text/javascript" src="../js/flot/jquery.flot.orderBar.min.js"></script>
+    <script type="text/javascript" src="../js/flot/jquery.flot.stack.min.js"></script>
+    <script type="text/javascript" src="../js/flot/jquery.flot.pie.min.js"></script>
+    <script type="text/javascript" src="../js/flot/jquery.flot.tooltip.min.js"></script>
+
+    <script type="text/javascript" src="../js/custom-index2.js"></script>
+    <!-- Dashboard Main JS - END -->
+    <!-- Active Menu JS - START -->
+    <script type="text/javascript">
+        $('li a').each(function () {
+            if ($($(this))[0].href == String(window.location)) {
+                $(this).parent().addClass('active1');
+            }
+        });
+        $('li ul li a').each(function () {
+            if ($($(this))[0].href == String(window.location)) {
+                $(this).parent().addClass('active1');
+                $(this).parent().parent().show();
+            }
+        });
+    </script>
+    <!-- Active Menu JS - END -->
+    <!-- General section box modal start -->
+    <div class="modal" id="section-settings" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog animated bounceInDown">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Section Settings</h4>
+                </div>
+                <div class="modal-body">
+                    Body goes here...
+
+                </div>
+                <div class="modal-footer">
+                    <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+                    <button class="btn btn-success" type="button">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal end -->
+</body>
+</html>

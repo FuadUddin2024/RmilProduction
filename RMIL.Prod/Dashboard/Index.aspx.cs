@@ -1,0 +1,102 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using RMIL.Prod.DAL;
+using RMIL.Prod.EntityFramework;
+using RMIL.Prod.Utility;
+
+namespace RMIL.Prod.Dashboard
+{
+    public partial class Index : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (Session[WebUtility.SessionCurrentUserObj] != null)
+            {
+                if (!IsPostBack)
+                {
+                    LoadCurrentDate();
+                    LoadRmDashboardData();
+                }
+            }
+            else
+            {
+                Response.Redirect("~/Account/Logout.aspx");
+            }
+        }
+        protected void Page_PreInit(object sender, EventArgs e)
+        {
+            if (Session[WebUtility.SessionCurrentUserObj] != null)
+            {
+                UserInfo user = (UserInfo)Session[WebUtility.SessionCurrentUserObj];
+
+
+                if (user.UserTypeId == ((int)Enums.Enums.EnumUserType.SuperAdmin))
+                {
+                    this.MasterPageFile = "~/MasterPages/Main.Master";
+                }
+                else if (user.UserTypeId == ((int)Enums.Enums.EnumUserType.Admin))
+                {
+                    this.MasterPageFile = "~/MasterPages/Admin.Master";
+                }
+                else if (user.UserTypeId == ((int)Enums.Enums.EnumUserType.ReportUser))
+                {
+                    this.MasterPageFile = "~/MasterPages/Report.Master";
+                }
+
+            }
+            else
+            {
+                Response.Redirect("~/Account/Logout.aspx");
+            }
+
+        }
+        protected void btnShow_Click(object sender, EventArgs e)
+        {
+            if (Session[WebUtility.SessionCurrentUserObj] != null)
+            {
+                UserInfo currentUser = (UserInfo)Session[WebUtility.SessionCurrentUserObj];
+
+                try
+                {
+                    LoadRmDashboardData();
+                }
+                catch (Exception ex)
+                {
+                    Response.Write(ex.Message);
+                }
+            }
+            else
+            {
+                Response.Redirect("~/Account/Logout.aspx");
+            }
+
+        }
+        private void LoadCurrentDate()
+        {
+            if (Session[WebUtility.SessionCurrentUserObj] != null)
+            {
+                var currentDate = DateTime.Now.Date;
+                dtpTarget.SelectedDate = currentDate;
+            }
+            else
+            {
+                Response.Redirect("~/Account/Logout.aspx");
+            }
+
+        }
+        private void LoadRmDashboardData()
+        {
+            var selectDate = dtpTarget.SelectedDate;
+            if (selectDate != null)
+            {
+                var q = new ProdTargetDa(true).GetRmilDataByDate((DateTime)selectDate);
+                gvDashboard.DataSource = q;
+                gvDashboard.DataBind();
+            }
+        }
+    }
+}
