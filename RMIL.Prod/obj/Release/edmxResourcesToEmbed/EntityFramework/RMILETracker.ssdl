@@ -583,6 +583,7 @@
     <Property Name="ModifiedDate" Type="datetime" />
     <Property Name="EntryPC" Type="nvarchar" MaxLength="50" />
     <Property Name="ModifiedPC" Type="nvarchar" MaxLength="50" />
+    <Property Name="ExtraPartCost" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="FieldParts">
     <Key>
@@ -659,8 +660,8 @@
       <PropertyRef Name="AssignBoxID" />
     </Key>
     <Property Name="AssignBoxID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="BoxBarCode" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="ProductModelBarcode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BoxBarCode" Type="varchar" MaxLength="50" />
+    <Property Name="ProductModelBarcode" Type="varchar" MaxLength="50" />
     <Property Name="PackedBy" Type="nvarchar(max)" Nullable="false" />
     <Property Name="IsSent" Type="int" Nullable="false" />
     <Property Name="EntryBy" Type="nvarchar(max)" />
@@ -4565,6 +4566,8 @@ warning 6002: The table/view 'RMILCSDb.dbo.vw_WarrantyInfoList' does not have a 
   <Function Name="sp_FieldServicingReportProductWise" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="sp_FieldServicingReportProductWiseBillInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="sp_GetMonthlyTechnicianFeedbackExcel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_GetProductionByShiftDay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_GetProductionByShiftNight" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="sp_GetTopProblemByProductAndDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="StartDate" Type="date" Mode="In" />
     <Parameter Name="EndDate" Type="date" Mode="In" />

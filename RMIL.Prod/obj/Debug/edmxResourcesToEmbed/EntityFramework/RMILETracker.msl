@@ -461,6 +461,7 @@
     <EntitySetMapping Name="FieldComplain">
       <EntityTypeMapping TypeName="RMILCSDbModel.FieldComplain">
         <MappingFragment StoreEntitySet="FieldComplain">
+          <ScalarProperty Name="ExtraPartCost" ColumnName="ExtraPartCost" />
           <ScalarProperty Name="TId" ColumnName="TId" />
           <ScalarProperty Name="ComDate" ColumnName="ComDate" />
           <ScalarProperty Name="AttendDate" ColumnName="AttendDate" />
@@ -4559,6 +4560,40 @@
           <ScalarProperty Name="BarcodeNo" ColumnName="BarcodeNo" />
           <ScalarProperty Name="BoxBarCode" ColumnName="BoxBarCode" />
           <ScalarProperty Name="ThaDstbId" ColumnName="ThaDstbId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetProductionByShiftDay" FunctionName="RMILCSDbModel.Store.sp_GetProductionByShiftDay">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RMILCSDbModel.sp_GetProductionByShiftDay_Result">
+          <ScalarProperty Name="TotalProduction" ColumnName="TotalProduction" />
+          <ScalarProperty Name="PrModelName" ColumnName="PrModelName" />
+          <ScalarProperty Name="ModelCode" ColumnName="ModelCode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetProductionByShiftNight" FunctionName="RMILCSDbModel.Store.sp_GetProductionByShiftNight">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RMILCSDbModel.sp_GetProductionByShiftNight_Result">
+          <ScalarProperty Name="TotalProduction" ColumnName="TotalProduction" />
+          <ScalarProperty Name="PrModelName" ColumnName="PrModelName" />
+          <ScalarProperty Name="ModelCode" ColumnName="ModelCode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="vw_MasterBoxDetailsVV">
+      <EntityTypeMapping TypeName="RMILCSDbModel.vw_MasterBoxDetailsVV">
+        <MappingFragment StoreEntitySet="vw_MasterBoxDetailsVV">
+          <ScalarProperty Name="DepotName" ColumnName="DepotName" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="PackedBy" ColumnName="PackedBy" />
+          <ScalarProperty Name="MfDate" ColumnName="MfDate" />
+          <ScalarProperty Name="PrModelName" ColumnName="PrModelName" />
+          <ScalarProperty Name="ModelCode" ColumnName="ModelCode" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductModelBarcode" ColumnName="ProductModelBarcode" />
+          <ScalarProperty Name="BoxBarCode" ColumnName="BoxBarCode" />
+          <ScalarProperty Name="AssignBoxID" ColumnName="AssignBoxID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

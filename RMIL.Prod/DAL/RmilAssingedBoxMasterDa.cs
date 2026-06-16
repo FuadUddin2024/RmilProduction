@@ -33,9 +33,9 @@ namespace RMIL.Prod.DAL
                 ObjRmilcsDbEntities.MasterBoxAssigned.Where(x=>x.BoxBarCode== BoxBarcode).Count();
             return lastTransactionId;
         }
-        public List<vw_MasterBoxDetailsV> GetALLAssingedProducts(DateTime StartDate,DateTime EndDate)
+        public List<vw_MasterBoxDetailsVV> GetALLAssingedProducts(DateTime StartDate,DateTime EndDate)
         {
-            var q = ObjRmilcsDbEntities.vw_MasterBoxDetailsV.Where(c => c.EntryDate>= StartDate && c.EntryDate <= EndDate).ToList();
+            var q = ObjRmilcsDbEntities.vw_MasterBoxDetailsVV.Where(c => c.EntryDate>= StartDate && c.EntryDate <= EndDate).ToList();
             return q;
         }
         public bool CheckAllBarcode(string Barcode)

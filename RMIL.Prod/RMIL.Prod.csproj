@@ -190,30 +190,32 @@
     <Content Include="css\StyleSheet.css.exclude" />
     <Content Include="css\vssver.scc" />
     <Content Include="css\wysi\vssver.scc" />
+    <Content Include="Dashboard\DistributionWeightScale.aspx" />
     <Content Include="Dashboard\IndexWeightScale.aspx" />
     <Content Include="Dashboard\TarVsPr.aspx" />
+    <Content Include="Dashboard\CurrentProductionModel.aspx" />
     <Content Include="Distribution\RmilDistributionReturn.aspx" />
     <Content Include="Distribution\RmilDistributionOut.aspx" />
-    <Content Include="EntityFramework\RMILETracker.Context.tt">
+    <Content Include="EntityFramework\RMILCSDbEntities.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>RMILETracker.edmx</DependentUpon>
-      <LastGenOutput>RMILETracker.Context.cs</LastGenOutput>
+      <DependentUpon>RMILCSDbEntities.edmx</DependentUpon>
+      <LastGenOutput>RMILCSDbEntities.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="EntityFramework\RMILETracker.tt">
+    <Content Include="EntityFramework\RMILCSDbEntities.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>RMILETracker.edmx</DependentUpon>
-      <LastGenOutput>RMILETracker.cs</LastGenOutput>
+      <DependentUpon>RMILCSDbEntities.edmx</DependentUpon>
+      <LastGenOutput>RMILCSDbEntities.cs</LastGenOutput>
     </Content>
-    <Content Include="fonts\fontawesome-webfontba72.eot" />
-    <Content Include="fonts\fontawesome-webfontba72.ttf" />
-    <Content Include="fonts\fontawesome-webfontba72.woff" />
-    <Content Include="fonts\fontawesome-webfontd41d.eot" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regulard41d.eot" />
-    <Content Include="fonts\vssver.scc" />
+    <Content Include="custom\fonts\fontawesome-webfontba72.eot" />
+    <Content Include="custom\fonts\fontawesome-webfontba72.ttf" />
+    <Content Include="custom\fonts\fontawesome-webfontba72.woff" />
+    <Content Include="custom\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="custom\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="custom\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="custom\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="custom\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="custom\fonts\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="custom\fonts\vssver.scc" />
     <Content Include="js\color-picker\vssver.scc" />
     <Content Include="js\flot\custom\vssver.scc" />
     <Content Include="js\flot\vssver.scc" />
@@ -224,18 +226,18 @@
     <Content Include="js\justgage\vssver.scc" />
     <Content Include="js\vssver.scc" />
     <Content Include="js\wysi\vssver.scc" />
-    <Content Include="j\flot\custom\vssver.scc" />
+    <Content Include="custom\vssver.scc" />
     <Content Include="j\flot\vssver.scc" />
     <Content Include="packages.config" />
     <Content Include="MasterPages\Main.Master" />
     <Content Include="MasterPages\Qc.Master" />
     <Content Include="MasterPages\Prod.Master" />
-    <EntityDeploy Include="EntityFramework\RMILETracker.edmx">
+    <EntityDeploy Include="EntityFramework\RMILCSDbEntities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>RMILETracker.Designer.cs</LastGenOutput>
+      <LastGenOutput>RMILCSDbEntities.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="EntityFramework\RMILETracker.edmx.diagram">
-      <DependentUpon>RMILETracker.edmx</DependentUpon>
+    <Content Include="EntityFramework\RMILCSDbEntities.edmx.diagram">
+      <DependentUpon>RMILCSDbEntities.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\rm.pubxml" />
     <None Include="Web.Debug.config">
@@ -3089,9 +3091,9 @@
     <Content Include="css\white.css" />
     <Content Include="css\wysi\bootstrap-wysihtml5.css" />
     <Content Include="Dashboard\Index.aspx" />
-    <Content Include="fonts\font-awesome.min.css" />
-    <Content Include="fonts\fontawesome-webfontba72.svg" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="custom\fonts\font-awesome.min.css" />
+    <Content Include="custom\fonts\fontawesome-webfontba72.svg" />
+    <Content Include="custom\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Images\Add.png" />
     <Content Include="Images\approve.png" />
     <Content Include="Images\cancel.png" />
@@ -3163,18 +3165,18 @@
     <Content Include="j\bootstrap-multiselect.js" />
     <Content Include="j\bootstrap.min.css" />
     <Content Include="j\bootstrap.min.js" />
-    <Content Include="j\flot\custom\area.js" />
-    <Content Include="j\flot\custom\donut.js" />
-    <Content Include="j\flot\custom\horizontal.js" />
-    <Content Include="j\flot\custom\line.js" />
-    <Content Include="j\flot\custom\pie.js" />
-    <Content Include="j\flot\custom\realtime.js" />
-    <Content Include="j\flot\custom\rectangular-pie.js" />
-    <Content Include="j\flot\custom\scatter.js" />
-    <Content Include="j\flot\custom\stacked-area.js" />
-    <Content Include="j\flot\custom\stacked-horizontal.js" />
-    <Content Include="j\flot\custom\stacked-vertical.js" />
-    <Content Include="j\flot\custom\vertical.js" />
+    <Content Include="custom\area.js" />
+    <Content Include="custom\donut.js" />
+    <Content Include="custom\horizontal.js" />
+    <Content Include="custom\line.js" />
+    <Content Include="custom\pie.js" />
+    <Content Include="custom\realtime.js" />
+    <Content Include="custom\rectangular-pie.js" />
+    <Content Include="custom\scatter.js" />
+    <Content Include="custom\stacked-area.js" />
+    <Content Include="custom\stacked-horizontal.js" />
+    <Content Include="custom\stacked-vertical.js" />
+    <Content Include="custom\vertical.js" />
     <Content Include="j\flot\jquery.flot.js" />
     <Content Include="j\flot\jquery.flot.orderBar.min.js" />
     <Content Include="j\flot\jquery.flot.pie.min.js" />
@@ -3183,6 +3185,7 @@
     <Content Include="j\flot\jquery.flot.tooltip.min.js" />
     <Content Include="j\jquery.min.js" />
     <Content Include="j\plotly-latest.min.js" />
+    <Content Include="ProductionDetails\BarcodeSearchWeight.aspx" />
     <Content Include="Production\BarcodeSearch.aspx" />
     <Content Include="Production\ProdTargetEntry.aspx" />
     <Content Include="Production\RmProductionWeightScaleBox.aspx" />
@@ -3296,6 +3299,7 @@
     <Compile Include="DAL\QcSwitchDa.cs" />
     <Compile Include="DAL\QcUserWiseStepDa.cs" />
     <Compile Include="DAL\RmilAssingedBoxMasterDa.cs" />
+    <Compile Include="DAL\RMILDashboardDa.cs" />
     <Compile Include="DAL\RmilProdDetailsDa.cs" />
     <Compile Include="DAL\RmilBoxMasterDa.cs" />
     <Compile Include="DAL\RmilProdMasterDa.cs" />
@@ -3304,6 +3308,13 @@
     <Compile Include="DAL\UserInfoDa.cs" />
     <Compile Include="DAL\UserTypeDa.cs" />
     <Compile Include="DAL\UserWiseMenuPerDa.cs" />
+    <Compile Include="Dashboard\DistributionWeightScale.aspx.cs">
+      <DependentUpon>DistributionWeightScale.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\DistributionWeightScale.aspx.designer.cs">
+      <DependentUpon>DistributionWeightScale.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard\IndexWeightScale.aspx.cs">
       <DependentUpon>IndexWeightScale.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3318,12 +3329,20 @@
     <Compile Include="Dashboard\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Dashboard\Model\DashboardModel.cs" />
     <Compile Include="Dashboard\TarVsPr.aspx.cs">
       <DependentUpon>TarVsPr.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Dashboard\TarVsPr.aspx.designer.cs">
       <DependentUpon>TarVsPr.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\CurrentProductionModel.aspx.cs">
+      <DependentUpon>CurrentProductionModel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\CurrentProductionModel.aspx.designer.cs">
+      <DependentUpon>CurrentProductionModel.aspx</DependentUpon>
     </Compile>
     <Compile Include="Distribution\RmilDistributionReturn.aspx.cs">
       <DependentUpon>RmilDistributionReturn.aspx</DependentUpon>
@@ -3340,616 +3359,643 @@
       <DependentUpon>RmilDistributionOut.aspx</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\ActionTaken.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\Assign.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\BaseEngr.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\Boring.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\Category.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\Company.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\Complain.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\Customer.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\DamageReturnInfo.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\DealerDetails.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\DemageReturnCost.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\Department.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\DepoReturnLog.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\DepotWeight.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\DepoWiseUserAssign.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\Designation.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\Diller.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\DistributionDeliveryType.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\DistributionEntryInfo.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\DistributionWeight.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\DistributionWeight6226.cs">
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\DN.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\Engineer.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\FCompany.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\Feedback.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\FieldAction.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\FieldComplain.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\FieldParts.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\GetCostingDetails1_Result.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\GetUnprintedRmilProdMaster_CurrentMonth_Result.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\Group.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\JobCardInfo.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\Mail_Information.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\MasterBoxAssigned.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\MasterBoxAssigned6226.cs">
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\Menus.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\MonthCalc.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\MonthlytechnicianFeedbackExcel.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\NatureOfFault.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\NatureOfProblem.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\OtherCost.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\ParentMenus.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\PartsInfo.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\prc_MenuListByUser_Result.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\prc_SrFinalApvPendingListByTicketId_Result.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\prc_SrFinalApvPendingList_Result.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\prc_SrFirstApvListByTicketId_Result.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\prc_SrFirstApvList_Result.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\ProdTarget.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\Product.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\ProductionLine.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\ProductModel.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\ProdWiseAction.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\ProdWiseParts.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\ProdWiseProblem.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\PumpParameter.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\QcDetails.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\QcMaster.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\QcMove.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\QcPoint.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\QcPointAsn.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\QcStep.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\QcSwitch.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\QcUserWiseStep.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\Reference.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\RmilBoxDetails.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\RmilBoxMaster.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="EntityFramework\RMILETracker.Context.cs">
+    <Compile Include="EntityFramework\RMILCSDbEntities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RMILETracker.Context.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="EntityFramework\RMILETracker.cs">
+    <Compile Include="EntityFramework\RMILCSDbEntities.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="EntityFramework\RMILETracker.Designer.cs">
+    <Compile Include="EntityFramework\RMILCSDbEntities.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RMILETracker.edmx</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.edmx</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\RmilProdDetails.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\RmilProdMaster.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\RmilUserWiseLinePer.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\RptCosting.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\RptCostingDetails.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\RPT_SpGetCostingByTicketId_Result.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\sayedtvf_Result.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\SecurityEntryInfo.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\ServiceCenter.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\ServiceCenterEntryInfo.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\ServiceEntryCancelReason.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\SMSBODY.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\SparePartsCost.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\SparePartsInfo.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\spGetCostingDetails_Result.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\sp_FieldServicingReportProductWiseBillInfo_Result.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\sp_FieldServicingReportProductWise_Result.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\sp_GetDistributionProductionDayShift_Result.cs">
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\sp_GetDistributionProductionNightShift_Result.cs">
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\sp_GetMonthlyTechnicianFeedbackExcel_Result.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\sp_GetProductionByShiftDay_Result.cs">
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\sp_GetProductionByShiftNight_Result.cs">
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\sp_GetTopProblemByProductAndDate_Result.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\sp_RmilProd_Result.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\sp_SelectMonthlyTechnicianFeedbackExcel_Result.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\Sp_TechnicialFeedbackMonthly_Result.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\Status.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\tblCharge.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\tblModelPartsRate.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\tblOther.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\UserInfo.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\UserType.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\UserWiseMenuPer.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\UserWiseSrPer.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\UseSparePartsCostingInfo.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\usp_GetUnprintedRmPmLast7Days_Result.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\VoltType.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_AllSearchFromAssign.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_AssignbySmsBody1.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_AssignDataZoneWise.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_AssignList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_AssignListForPs.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_AssignListZoneWise.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_AssignListZoneWiseWithTechnician.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_AutoAsnDataZoneWise.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_BaseEnrList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_CategoryList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_ChargeList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_Costing.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_DealerDepotDetails.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_DemageReturnCostingList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_DepoWiseUserAssign.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_DistributionDetails.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_DistributionDetailsV.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_DistributionDetailsVV.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_DistributionDetailsVVV.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_DistributionDetailsVVVV.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_DistributionEntryList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_DRCost.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_DRSubTotal.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_EngrList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_FieldComList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_FieldServicingReport.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_GetbillinfoByDate.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_GlobalSearchFromAssign.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_JobCardList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_LineWDailyTargetList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_MasterBoxDetails.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_MasterBoxDetailsV.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\vw_MasterBoxDetailsVV.cs">
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_MenuList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_ModelPartsList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_ModelWiseSparePartsList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_OtherCost.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_OtherCostingList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_OtherSubTotal.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_OWCost.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_PartsCost.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_PartsList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_PartsSubTotal.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_PendingComplain.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_PendingComplainNEW.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_PendingComplainNEWV.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_PendingComplainNEWVV.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_PendingComplainNEWVVV.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_PendingComplainNEWVVVV.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\vw_PendingComplainNEWVVVVV.cs">
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_ProdDetails.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_ProductList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_ProductModelList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_ProductWiseActionList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_ProductWisePartsList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_ProductWiseProblemList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_ProdWiseActAssign.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_ProdWiseProbAssign.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_PsList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_PumpSelParList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_QcExistList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_QcHistDetails.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_QcHistoryDetails.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_QcMoveList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_QcPerList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_QcStepsList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_QcSwitchList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_ReferenceList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_RmBarProdInfo.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_RmilBoxDetails.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_RmilBoxDetailsV.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_RmilProdBarCode.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\vw_RmilProductDistributionInfo.cs">
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_RptCostingWithProfitLoss.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_RPTGetCostingDetails.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_RPTRevenueDetails.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_SalesReturnList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_SearchFromAssign.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_SecurityEntryList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_ServiceCenterStatusCount.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_ServiceCenterStatusPtg.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_ServiceCostingReport.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_ServiceCostingReportWithProfitLoss.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_ServiceCostPrint.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_ServiceList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_ServiceList1.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_ServicingReport.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_ServicingReportNew.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_SparePartsCostingList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_SparePartsList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_spList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_SrAppliedList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_SrCompleteList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_SrFinishList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_SrSearchList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_StatusCalcPtg.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_StWisePointAsnList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_TempSpList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_UpdateAsnDataZoneWise.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_UserList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_UserWiseLineList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_WarrantyInfoList.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\WarrantyInfo.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\Zone.cs">
-      <DependentUpon>RMILETracker.tt</DependentUpon>
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Enums\Enums.cs" />
     <Compile Include="MasterPages\Main.Master.cs">
@@ -3972,6 +4018,13 @@
     </Compile>
     <Compile Include="MasterPages\Qc.Master.designer.cs">
       <DependentUpon>Qc.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ProductionDetails\BarcodeSearchWeight.aspx.cs">
+      <DependentUpon>BarcodeSearchWeight.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductionDetails\BarcodeSearchWeight.aspx.designer.cs">
+      <DependentUpon>BarcodeSearchWeight.aspx</DependentUpon>
     </Compile>
     <Compile Include="Production\BarcodeSearch.aspx.cs">
       <DependentUpon>BarcodeSearch.aspx</DependentUpon>

@@ -189,6 +189,51 @@ namespace RMIL.Prod.QC
         }
         protected void TxtSingle_TextChanged(object sender, EventArgs e)
         {
+            //if (ddlmasterbarcode.Text != null)
+            //{
+            //    RmilAssingedBoxMasterDa Checkbarcode = new RmilAssingedBoxMasterDa();
+            //    var findingvalues = Checkbarcode.CheckAllMasterBarcode(ddlmasterbarcode.Text);
+            //    if (findingvalues == true)
+            //    {
+            //        ScriptManager.RegisterStartupScript(Page, typeof(Page), "ClientScript", "alert('Already Saved');", true);
+            //        ddlmasterbarcode.Text = "";
+            //    }
+            //    else
+            //    {
+            //        submitallbutton.Visible = true;
+            //    }
+            // Updated on 13.6.26 Last Update 
+            //    //int limit = Convert.ToInt32(Session["totalbox"]);
+            //    //if(limit>1)
+            //    //{
+            //    //    var findingvalues = Checkbarcode.CheckAllBarcode(ddlmasterbarcode.Text);
+            //    //    if (findingvalues == true)
+            //    //    {
+            //    //        ScriptManager.RegisterStartupScript(Page, typeof(Page), "ClientScript", "alert('Already Saved');", true);
+            //    //        ddlmasterbarcode.Text = "";
+            //    //    }
+            //    //    else
+            //    //    {
+            //    //        submitallbutton.Visible = true;
+            //    //    }
+            //    //}
+            //    //else
+            //    //{
+            //    //    var findingvalues = Checkbarcode.CheckAllMasterBarcode(ddlmasterbarcode.Text);
+            //    //    if (findingvalues == true)
+            //    //    {
+            //    //        ScriptManager.RegisterStartupScript(Page, typeof(Page), "ClientScript", "alert('Already Saved');", true);
+            //    //        ddlmasterbarcode.Text = "";
+            //    //    }
+            //    //    else
+            //    //    {
+            //    //        submitallbutton.Visible = true;
+            //    //    }
+
+            //    //}
+            //}
+            //// btnSubmit.Enabled = true;.
+            // Updated on 13.6.26 start
             if (ddlmasterbarcode.Text != null)
             {
                 RmilAssingedBoxMasterDa Checkbarcode = new RmilAssingedBoxMasterDa();
@@ -200,39 +245,13 @@ namespace RMIL.Prod.QC
                 }
                 else
                 {
-                    submitallbutton.Visible = true;
+                    SaveAssignedProducts();
                 }
-                //int limit = Convert.ToInt32(Session["totalbox"]);
-                //if(limit>1)
-                //{
-                //    var findingvalues = Checkbarcode.CheckAllBarcode(ddlmasterbarcode.Text);
-                //    if (findingvalues == true)
-                //    {
-                //        ScriptManager.RegisterStartupScript(Page, typeof(Page), "ClientScript", "alert('Already Saved');", true);
-                //        ddlmasterbarcode.Text = "";
-                //    }
-                //    else
-                //    {
-                //        submitallbutton.Visible = true;
-                //    }
-                //}
-                //else
-                //{
-                //    var findingvalues = Checkbarcode.CheckAllMasterBarcode(ddlmasterbarcode.Text);
-                //    if (findingvalues == true)
-                //    {
-                //        ScriptManager.RegisterStartupScript(Page, typeof(Page), "ClientScript", "alert('Already Saved');", true);
-                //        ddlmasterbarcode.Text = "";
-                //    }
-                //    else
-                //    {
-                //        submitallbutton.Visible = true;
-                //    }
-
-                //}
             }
-            // btnSubmit.Enabled = true;.
-            
+            // Updated On 13.6.26 end
+
+
+
         }
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
@@ -259,6 +278,25 @@ namespace RMIL.Prod.QC
                             {
                                 if(MasterBarcode.Count()==16 && MasterBox.SingleCarton > 1)
                                 {
+
+                                    for (int i = 1; i <= MasterBox.SingleCarton; i++)
+                                    {
+                                        TextBox txt = phInputs.Controls.OfType<TextBox>()
+                                                          .FirstOrDefault(x => x.ID == "txtInput_" + i);
+
+                                        if (txt == null || string.IsNullOrWhiteSpace(txt.Text))
+                                        {
+                                            lblDisplayMessage.Text = "Please enter all barcodes.";
+                                            lblDisplayMessage.ForeColor = System.Drawing.Color.Red;
+                                            //ScriptManager.RegisterStartupScript(
+                                            //    Page,
+                                            //    typeof(Page),
+                                            //    "ClientScript",
+                                            //    $"alert('Please enter all barcodes.');",
+                                            //    true);
+                                            return false;
+                                        }
+                                    }
                                     if (MasterBox.SingleCarton > 1)
                                     {
                                         for (int i = 1; i <= MasterBox.SingleCarton; i++)
@@ -291,7 +329,9 @@ namespace RMIL.Prod.QC
                                             }
                                             else
                                             {
-                                                ScriptManager.RegisterStartupScript(Page, typeof(Page), "ClientScript", "alert('Barcode Missing or Enter valid Barcode');", true);
+                                                lblDisplayMessage.Text = "Barcode Missing or Enter valid Barcode";
+                                                lblDisplayMessage.ForeColor = System.Drawing.Color.Red;
+                                                //ScriptManager.RegisterStartupScript(Page, typeof(Page), "ClientScript", "alert('Barcode Missing or Enter valid Barcode');", true);
                                                 return false;
                                             }
                                         }
@@ -300,7 +340,10 @@ namespace RMIL.Prod.QC
                                     }
                                 else
                                 {
-                                    ScriptManager.RegisterStartupScript(Page, typeof(Page), "ClientScript", "alert('Master Barcode Missing or Enter valid Barcode');", true);
+                                        lblDisplayMessage.Text = "Master Barcode Missing or Enter valid Barcode.";
+                                        lblDisplayMessage.ForeColor = System.Drawing.Color.Red;
+
+                                       // ScriptManager.RegisterStartupScript(Page, typeof(Page), "ClientScript", "alert('Master Barcode Missing or Enter valid Barcode');", true);
                                     return false;
                                 }
                             }
@@ -308,6 +351,25 @@ namespace RMIL.Prod.QC
                                 {
                                     if (MasterBarcode.Count() == 16)
                                     {
+
+                                        for (int i = 1; i <= MasterBox.SingleCarton; i++)
+                                        {
+                                            TextBox txt = phInputs.Controls.OfType<TextBox>()
+                                                              .FirstOrDefault(x => x.ID == "txtInput_" + i);
+
+                                            if (txt == null || string.IsNullOrWhiteSpace(txt.Text))
+                                            {
+                                                lblDisplayMessage.Text = "Please enter all barcodes.";
+                                                lblDisplayMessage.ForeColor = System.Drawing.Color.Red;
+                                                //ScriptManager.RegisterStartupScript(
+                                                //    Page,
+                                                //    typeof(Page),
+                                                //    "ClientScript",
+                                                //    $"alert('Please enter all barcodes.');",
+                                                //    true);
+                                                return false;
+                                            }
+                                        }
                                         var MasterBoxMapping = new MasterBoxAssigned()
                                         {
                                             BoxBarCode = MasterBarcode,
@@ -336,16 +398,22 @@ namespace RMIL.Prod.QC
                                     }
                                     else
                                     {
-                                        ScriptManager.RegisterStartupScript(Page, typeof(Page), "ClientScript", "alert('Master Barcode Missing or Enter valid Barcode');", true);
+                                        lblDisplayMessage.Text = "Master Barcode Missing or Enter valid Barcode";
+                                        lblDisplayMessage.ForeColor = System.Drawing.Color.Red;
+                                       // ScriptManager.RegisterStartupScript(Page, typeof(Page), "ClientScript", "alert('Master Barcode Missing or Enter valid Barcode');", true);
                                         return false;
                                     }
                                 }
                             }
                             else
                             {
-                                ScriptManager.RegisterStartupScript(Page, typeof(Page), "ClientScript", "alert('Please Enter Master Barcode');", true);
+                                lblDisplayMessage.Text = "Please Enter Master Barcode";
+                                lblDisplayMessage.ForeColor = System.Drawing.Color.Red;
+                           //     ScriptManager.RegisterStartupScript(Page, typeof(Page), "ClientScript", "alert('Please Enter Master Barcode');", true);
                                 return false;
                             }
+                            lblDisplayMessage.Text = "Sucessfully Inserted.";
+                            lblDisplayMessage.ForeColor = System.Drawing.Color.Green;
                             ScriptManager.RegisterStartupScript(Page, typeof(Page), "ClientScript","alert('Sucessfully Inserted.');", true);
                             
                         }

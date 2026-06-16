@@ -461,6 +461,7 @@
     <EntitySetMapping Name="FieldComplain">
       <EntityTypeMapping TypeName="RMILCSDbModel.FieldComplain">
         <MappingFragment StoreEntitySet="FieldComplain">
+          <ScalarProperty Name="ExtraPartCost" ColumnName="ExtraPartCost" />
           <ScalarProperty Name="TId" ColumnName="TId" />
           <ScalarProperty Name="ComDate" ColumnName="ComDate" />
           <ScalarProperty Name="AttendDate" ColumnName="AttendDate" />
@@ -4562,5 +4563,23 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetProductionByShiftDay" FunctionName="RMILCSDbModel.Store.sp_GetProductionByShiftDay">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RMILCSDbModel.sp_GetProductionByShiftDay_Result">
+          <ScalarProperty Name="TotalProduction" ColumnName="TotalProduction" />
+          <ScalarProperty Name="PrModelName" ColumnName="PrModelName" />
+          <ScalarProperty Name="ModelCode" ColumnName="ModelCode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetProductionByShiftNight" FunctionName="RMILCSDbModel.Store.sp_GetProductionByShiftNight">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RMILCSDbModel.sp_GetProductionByShiftNight_Result">
+          <ScalarProperty Name="TotalProduction" ColumnName="TotalProduction" />
+          <ScalarProperty Name="PrModelName" ColumnName="PrModelName" />
+          <ScalarProperty Name="ModelCode" ColumnName="ModelCode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

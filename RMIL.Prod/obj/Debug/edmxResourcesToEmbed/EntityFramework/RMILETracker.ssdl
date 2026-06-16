@@ -583,6 +583,7 @@
     <Property Name="ModifiedDate" Type="datetime" />
     <Property Name="EntryPC" Type="nvarchar" MaxLength="50" />
     <Property Name="ModifiedPC" Type="nvarchar" MaxLength="50" />
+    <Property Name="ExtraPartCost" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="FieldParts">
     <Key>
@@ -659,8 +660,8 @@
       <PropertyRef Name="AssignBoxID" />
     </Key>
     <Property Name="AssignBoxID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="BoxBarCode" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="ProductModelBarcode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BoxBarCode" Type="varchar" MaxLength="50" />
+    <Property Name="ProductModelBarcode" Type="varchar" MaxLength="50" />
     <Property Name="PackedBy" Type="nvarchar(max)" Nullable="false" />
     <Property Name="IsSent" Type="int" Nullable="false" />
     <Property Name="EntryBy" Type="nvarchar(max)" />
@@ -2645,6 +2646,28 @@ warning 6002: The table/view 'RMILCSDb.dbo.vw_MasterBoxDetailsV' does not have a
     <Property Name="DepotName" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
+warning 6002: The table/view 'RMILCSDb.dbo.vw_MasterBoxDetailsVV' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_MasterBoxDetailsVV">
+    <Key>
+      <PropertyRef Name="AssignBoxID" />
+      <PropertyRef Name="ProductName" />
+      <PropertyRef Name="ModelCode" />
+      <PropertyRef Name="PrModelName" />
+      <PropertyRef Name="PackedBy" />
+      <PropertyRef Name="DepotName" />
+    </Key>
+    <Property Name="AssignBoxID" Type="int" Nullable="false" />
+    <Property Name="BoxBarCode" Type="varchar" MaxLength="50" />
+    <Property Name="ProductModelBarcode" Type="varchar" MaxLength="50" />
+    <Property Name="ProductName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ModelCode" Type="int" Nullable="false" />
+    <Property Name="PrModelName" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="MfDate" Type="date" />
+    <Property Name="PackedBy" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EntryDate" Type="datetime" />
+    <Property Name="DepotName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
 warning 6002: The table/view 'RMILCSDb.dbo.vw_MenuList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="vw_MenuList">
     <Key>
@@ -4565,6 +4588,8 @@ warning 6002: The table/view 'RMILCSDb.dbo.vw_WarrantyInfoList' does not have a 
   <Function Name="sp_FieldServicingReportProductWise" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="sp_FieldServicingReportProductWiseBillInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="sp_GetMonthlyTechnicianFeedbackExcel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_GetProductionByShiftDay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_GetProductionByShiftNight" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="sp_GetTopProblemByProductAndDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="StartDate" Type="date" Mode="In" />
     <Parameter Name="EndDate" Type="date" Mode="In" />
@@ -5503,6 +5528,20 @@ FROM [dbo].[vw_MasterBoxDetails] AS [vw_MasterBoxDetails]</DefiningQuery>
 [vw_MasterBoxDetailsV].[EntryDate] AS [EntryDate], 
 [vw_MasterBoxDetailsV].[DepotName] AS [DepotName]
 FROM [dbo].[vw_MasterBoxDetailsV] AS [vw_MasterBoxDetailsV]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_MasterBoxDetailsVV" EntityType="Self.vw_MasterBoxDetailsVV" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[vw_MasterBoxDetailsVV].[AssignBoxID] AS [AssignBoxID], 
+[vw_MasterBoxDetailsVV].[BoxBarCode] AS [BoxBarCode], 
+[vw_MasterBoxDetailsVV].[ProductModelBarcode] AS [ProductModelBarcode], 
+[vw_MasterBoxDetailsVV].[ProductName] AS [ProductName], 
+[vw_MasterBoxDetailsVV].[ModelCode] AS [ModelCode], 
+[vw_MasterBoxDetailsVV].[PrModelName] AS [PrModelName], 
+[vw_MasterBoxDetailsVV].[MfDate] AS [MfDate], 
+[vw_MasterBoxDetailsVV].[PackedBy] AS [PackedBy], 
+[vw_MasterBoxDetailsVV].[EntryDate] AS [EntryDate], 
+[vw_MasterBoxDetailsVV].[DepotName] AS [DepotName]
+FROM [dbo].[vw_MasterBoxDetailsVV] AS [vw_MasterBoxDetailsVV]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="vw_MenuList" EntityType="Self.vw_MenuList" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 

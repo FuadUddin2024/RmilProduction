@@ -123,6 +123,13 @@
                                     </div>
                                 </div>
                                 <div class="row" id="productbarcode" runat="server">
+                                 <div class="col-md-12">
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <asp:Label ID="lblDisplayMessage" runat="server" class="control-label col-lg-4"></asp:Label>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="col-md-12 dynamicinput">
                                         <label class="control-label col-lg-4">Product Barcode</label>
                                          <!-- Dynamic TextBoxes will appear here -->

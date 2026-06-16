@@ -52,5 +52,6 @@ namespace RMIL.Prod.EntityFramework
         public Nullable<System.DateTime> ModifiedDate { get; set; }
         public string EntryPC { get; set; }
         public string ModifiedPC { get; set; }
+        public string ExtraPartCost { get; set; }
     }
 }

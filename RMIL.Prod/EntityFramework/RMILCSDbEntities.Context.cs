@@ -37,13 +37,17 @@ namespace RMIL.Prod.EntityFramework
         public DbSet<Complain> Complain { get; set; }
         public DbSet<Customer> Customer { get; set; }
         public DbSet<DamageReturnInfo> DamageReturnInfo { get; set; }
+        public DbSet<DealerDetails> DealerDetails { get; set; }
         public DbSet<DemageReturnCost> DemageReturnCost { get; set; }
         public DbSet<Department> Department { get; set; }
+        public DbSet<DepoReturnLog> DepoReturnLog { get; set; }
         public DbSet<DepotWeight> DepotWeight { get; set; }
         public DbSet<DepoWiseUserAssign> DepoWiseUserAssign { get; set; }
         public DbSet<Designation> Designation { get; set; }
         public DbSet<Diller> Diller { get; set; }
+        public DbSet<DistributionDeliveryType> DistributionDeliveryType { get; set; }
         public DbSet<DistributionEntryInfo> DistributionEntryInfo { get; set; }
+        public DbSet<DistributionWeight> DistributionWeight { get; set; }
         public DbSet<DN> DN { get; set; }
         public DbSet<Engineer> Engineer { get; set; }
         public DbSet<FCompany> FCompany { get; set; }
@@ -104,7 +108,8 @@ namespace RMIL.Prod.EntityFramework
         public DbSet<VoltType> VoltType { get; set; }
         public DbSet<WarrantyInfo> WarrantyInfo { get; set; }
         public DbSet<Zone> Zone { get; set; }
-        public DbSet<DistributionWeight> DistributionWeight { get; set; }
+        public DbSet<DistributionWeight6226> DistributionWeight6226 { get; set; }
+        public DbSet<MasterBoxAssigned6226> MasterBoxAssigned6226 { get; set; }
         public DbSet<RptCosting> RptCosting { get; set; }
         public DbSet<RptCostingDetails> RptCostingDetails { get; set; }
         public DbSet<vw_AllSearchFromAssign> vw_AllSearchFromAssign { get; set; }
@@ -119,8 +124,14 @@ namespace RMIL.Prod.EntityFramework
         public DbSet<vw_CategoryList> vw_CategoryList { get; set; }
         public DbSet<vw_ChargeList> vw_ChargeList { get; set; }
         public DbSet<vw_Costing> vw_Costing { get; set; }
+        public DbSet<vw_DealerDepotDetails> vw_DealerDepotDetails { get; set; }
         public DbSet<vw_DemageReturnCostingList> vw_DemageReturnCostingList { get; set; }
         public DbSet<vw_DepoWiseUserAssign> vw_DepoWiseUserAssign { get; set; }
+        public DbSet<vw_DistributionDetails> vw_DistributionDetails { get; set; }
+        public DbSet<vw_DistributionDetailsV> vw_DistributionDetailsV { get; set; }
+        public DbSet<vw_DistributionDetailsVV> vw_DistributionDetailsVV { get; set; }
+        public DbSet<vw_DistributionDetailsVVV> vw_DistributionDetailsVVV { get; set; }
+        public DbSet<vw_DistributionDetailsVVVV> vw_DistributionDetailsVVVV { get; set; }
         public DbSet<vw_DistributionEntryList> vw_DistributionEntryList { get; set; }
         public DbSet<vw_DRCost> vw_DRCost { get; set; }
         public DbSet<vw_DRSubTotal> vw_DRSubTotal { get; set; }
@@ -131,6 +142,9 @@ namespace RMIL.Prod.EntityFramework
         public DbSet<vw_GlobalSearchFromAssign> vw_GlobalSearchFromAssign { get; set; }
         public DbSet<vw_JobCardList> vw_JobCardList { get; set; }
         public DbSet<vw_LineWDailyTargetList> vw_LineWDailyTargetList { get; set; }
+        public DbSet<vw_MasterBoxDetails> vw_MasterBoxDetails { get; set; }
+        public DbSet<vw_MasterBoxDetailsV> vw_MasterBoxDetailsV { get; set; }
+        public DbSet<vw_MasterBoxDetailsVV> vw_MasterBoxDetailsVV { get; set; }
         public DbSet<vw_MenuList> vw_MenuList { get; set; }
         public DbSet<vw_ModelPartsList> vw_ModelPartsList { get; set; }
         public DbSet<vw_ModelWiseSparePartsList> vw_ModelWiseSparePartsList { get; set; }
@@ -147,6 +161,7 @@ namespace RMIL.Prod.EntityFramework
         public DbSet<vw_PendingComplainNEWVV> vw_PendingComplainNEWVV { get; set; }
         public DbSet<vw_PendingComplainNEWVVV> vw_PendingComplainNEWVVV { get; set; }
         public DbSet<vw_PendingComplainNEWVVVV> vw_PendingComplainNEWVVVV { get; set; }
+        public DbSet<vw_PendingComplainNEWVVVVV> vw_PendingComplainNEWVVVVV { get; set; }
         public DbSet<vw_ProdDetails> vw_ProdDetails { get; set; }
         public DbSet<vw_ProductList> vw_ProductList { get; set; }
         public DbSet<vw_ProductModelList> vw_ProductModelList { get; set; }
@@ -166,6 +181,8 @@ namespace RMIL.Prod.EntityFramework
         public DbSet<vw_QcSwitchList> vw_QcSwitchList { get; set; }
         public DbSet<vw_ReferenceList> vw_ReferenceList { get; set; }
         public DbSet<vw_RmBarProdInfo> vw_RmBarProdInfo { get; set; }
+        public DbSet<vw_RmilBoxDetails> vw_RmilBoxDetails { get; set; }
+        public DbSet<vw_RmilBoxDetailsV> vw_RmilBoxDetailsV { get; set; }
         public DbSet<vw_RmilProdBarCode> vw_RmilProdBarCode { get; set; }
         public DbSet<vw_RptCostingWithProfitLoss> vw_RptCostingWithProfitLoss { get; set; }
         public DbSet<vw_RPTGetCostingDetails> vw_RPTGetCostingDetails { get; set; }
@@ -196,19 +213,7 @@ namespace RMIL.Prod.EntityFramework
         public DbSet<vw_UserList> vw_UserList { get; set; }
         public DbSet<vw_UserWiseLineList> vw_UserWiseLineList { get; set; }
         public DbSet<vw_WarrantyInfoList> vw_WarrantyInfoList { get; set; }
-        public DbSet<DealerDetails> DealerDetails { get; set; }
-        public DbSet<DistributionDeliveryType> DistributionDeliveryType { get; set; }
-        public DbSet<DepoReturnLog> DepoReturnLog { get; set; }
-        public DbSet<vw_MasterBoxDetails> vw_MasterBoxDetails { get; set; }
-        public DbSet<vw_MasterBoxDetailsV> vw_MasterBoxDetailsV { get; set; }
-        public DbSet<vw_DistributionDetails> vw_DistributionDetails { get; set; }
-        public DbSet<vw_DistributionDetailsV> vw_DistributionDetailsV { get; set; }
-        public DbSet<vw_DistributionDetailsVV> vw_DistributionDetailsVV { get; set; }
-        public DbSet<vw_DealerDepotDetails> vw_DealerDepotDetails { get; set; }
-        public DbSet<vw_RmilBoxDetails> vw_RmilBoxDetails { get; set; }
-        public DbSet<vw_RmilBoxDetailsV> vw_RmilBoxDetailsV { get; set; }
-        public DbSet<vw_DistributionDetailsVVV> vw_DistributionDetailsVVV { get; set; }
-        public DbSet<vw_DistributionDetailsVVVV> vw_DistributionDetailsVVVV { get; set; }
+        public DbSet<vw_RmilProductDistributionInfo> vw_RmilProductDistributionInfo { get; set; }
     
         [EdmFunction("RMILCSDbEntities", "sayedtvf")]
         public virtual IQueryable<sayedtvf_Result> sayedtvf(Nullable<int> complainNo)
@@ -334,6 +339,16 @@ namespace RMIL.Prod.EntityFramework
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_GetMonthlyTechnicianFeedbackExcel_Result>("sp_GetMonthlyTechnicianFeedbackExcel");
         }
     
+        public virtual ObjectResult<sp_GetProductionByShiftDay_Result> sp_GetProductionByShiftDay()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_GetProductionByShiftDay_Result>("sp_GetProductionByShiftDay");
+        }
+    
+        public virtual ObjectResult<sp_GetProductionByShiftNight_Result> sp_GetProductionByShiftNight()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_GetProductionByShiftNight_Result>("sp_GetProductionByShiftNight");
+        }
+    
         public virtual ObjectResult<sp_GetTopProblemByProductAndDate_Result> sp_GetTopProblemByProductAndDate(Nullable<System.DateTime> startDate, Nullable<System.DateTime> endDate, string productName)
         {
             var startDateParameter = startDate.HasValue ?
@@ -364,6 +379,24 @@ namespace RMIL.Prod.EntityFramework
         public virtual int sp_ProductIdUpdateForSr()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ProductIdUpdateForSr");
+        }
+    
+        public virtual int SP_ResetDistributionWeight(string barcodeNo)
+        {
+            var barcodeNoParameter = barcodeNo != null ?
+                new ObjectParameter("BarcodeNo", barcodeNo) :
+                new ObjectParameter("BarcodeNo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ResetDistributionWeight", barcodeNoParameter);
+        }
+    
+        public virtual int SP_ResetDistributionWeightV(string barcodeNo)
+        {
+            var barcodeNoParameter = barcodeNo != null ?
+                new ObjectParameter("BarcodeNo", barcodeNo) :
+                new ObjectParameter("BarcodeNo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ResetDistributionWeightV", barcodeNoParameter);
         }
     
         public virtual int sp_RmilDataInsert()
@@ -407,6 +440,16 @@ namespace RMIL.Prod.EntityFramework
         public virtual ObjectResult<usp_GetUnprintedRmPmLast7Days_Result> usp_GetUnprintedRmPmLast7Days()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_GetUnprintedRmPmLast7Days_Result>("usp_GetUnprintedRmPmLast7Days");
+        }
+    
+        public virtual ObjectResult<sp_GetDistributionProductionDayShift_Result> sp_GetDistributionProductionDayShift()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_GetDistributionProductionDayShift_Result>("sp_GetDistributionProductionDayShift");
+        }
+    
+        public virtual ObjectResult<sp_GetDistributionProductionNightShift_Result> sp_GetDistributionProductionNightShift()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_GetDistributionProductionNightShift_Result>("sp_GetDistributionProductionNightShift");
         }
     }
 }

@@ -454,9 +454,9 @@
                                 <span class="arrow "></span>
                             </a>
                             <ul class="sub-menu">
-                             <%--  <li>
-                                    <a class="" href="../Dashboard/IndexWeightScale.aspx">Live Production Summary</a>
-                                </li>--%>
+                              <li>
+                                    <a class="" href="../Dashboard/DistributionWeightScale.aspx">Live Distribution Summary</a>
+                                </li>
                                 <li>
                                     <a class="" href="../Dashboard/IndexWeightScale.aspx">Live Production Summary</a>
                                 </li>

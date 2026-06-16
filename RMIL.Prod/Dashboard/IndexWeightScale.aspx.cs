@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using RMIL.Prod.DAL;
 using RMIL.Prod.EntityFramework;
 using RMIL.Prod.Utility;
+using System.Web.Services;
+using RMIL.Prod.Dashboard.Model;
 
 namespace RMIL.Prod.Dashboard
 {
@@ -75,28 +77,29 @@ namespace RMIL.Prod.Dashboard
             }
 
         }
-        //private void LoadCurrentDate()
-        //{
-        //    if (Session[WebUtility.SessionCurrentUserObj] != null)
-        //    {
-        //        var currentDate = DateTime.Now.Date;
-        //        dtpTarget.SelectedDate = currentDate;
-        //    }
-        //    else
-        //    {
-        //        Response.Redirect("~/Account/Logout.aspx");
-        //    }
+        [WebMethod]
+        public static DayShiftViewModel GetALLDayShiftData()
+        {
+            RMILDashboardDa DayshiftData = new RMILDashboardDa();
+            var tableDetails = DayshiftData.GetDayShiftData();
 
-        //}
-        //private void LoadRmDashboardData()
-        //{
-        //    var selectDate = dtpTarget.SelectedDate;
-        //    if (selectDate != null)
-        //    {
-        //        var q = new ProdTargetDa(true).GetRmilDataByDate((DateTime)selectDate);
-        //        gvDashboard.DataSource = q;
-        //        gvDashboard.DataBind();
-        //    }
-        //}
+            return new DayShiftViewModel
+            {
+                ShiftData = tableDetails,
+                TotalProduction = tableDetails.Sum(x => x.TotalProduction)
+            };
+        }
+        [WebMethod]
+        public static NightShiftViewModel GetALLNightShiftData()
+        {
+            RMILDashboardDa DayshiftData = new RMILDashboardDa();
+            var tableDetails = DayshiftData.GetNightShiftData();
+
+            return new NightShiftViewModel
+            {
+                ShiftData = tableDetails,
+                TotalProduction = tableDetails.Sum(x => x.TotalProduction)
+            };
+        }
     }
 }

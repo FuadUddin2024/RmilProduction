@@ -8806,7 +8806,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/17/2018 19:15:12</publishTime>
     </File>
     <File Include="bin/RMIL.Prod.dll">
-      <publishTime>06/01/2026 11:05:08</publishTime>
+      <publishTime>06/16/2026 09:15:53</publishTime>
     </File>
     <File Include="bin/stdole.dll">
       <publishTime>07/07/2015 00:51:38</publishTime>
@@ -8916,8 +8916,95 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="cssLogin/images/user.png">
       <publishTime>09/13/2022 12:17:54</publishTime>
     </File>
+    <File Include="custom/area.js">
+      <publishTime>09/13/2022 12:17:54</publishTime>
+    </File>
+    <File Include="custom/donut.js">
+      <publishTime>09/13/2022 12:17:54</publishTime>
+    </File>
+    <File Include="custom/fonts/font-awesome.min.css">
+      <publishTime>09/13/2022 12:17:54</publishTime>
+    </File>
+    <File Include="custom/fonts/fontawesome-webfontba72.eot">
+      <publishTime>09/13/2022 12:17:54</publishTime>
+    </File>
+    <File Include="custom/fonts/fontawesome-webfontba72.svg">
+      <publishTime>09/13/2022 12:17:54</publishTime>
+    </File>
+    <File Include="custom/fonts/fontawesome-webfontba72.ttf">
+      <publishTime>09/13/2022 12:17:54</publishTime>
+    </File>
+    <File Include="custom/fonts/fontawesome-webfontba72.woff">
+      <publishTime>09/13/2022 12:17:54</publishTime>
+    </File>
+    <File Include="custom/fonts/fontawesome-webfontd41d.eot">
+      <publishTime>09/13/2022 12:17:54</publishTime>
+    </File>
+    <File Include="custom/fonts/glyphicons-halflings-regular.eot">
+      <publishTime>09/13/2022 12:17:54</publishTime>
+    </File>
+    <File Include="custom/fonts/glyphicons-halflings-regular.svg">
+      <publishTime>09/13/2022 12:17:54</publishTime>
+    </File>
+    <File Include="custom/fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>09/13/2022 12:17:54</publishTime>
+    </File>
+    <File Include="custom/fonts/glyphicons-halflings-regular.woff">
+      <publishTime>09/13/2022 12:17:54</publishTime>
+    </File>
+    <File Include="custom/fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>09/13/2022 12:17:54</publishTime>
+    </File>
+    <File Include="custom/fonts/glyphicons-halflings-regulard41d.eot">
+      <publishTime>09/13/2022 12:17:54</publishTime>
+    </File>
+    <File Include="custom/fonts/vssver.scc">
+      <publishTime>09/13/2022 12:17:54</publishTime>
+    </File>
+    <File Include="custom/horizontal.js">
+      <publishTime>09/13/2022 12:17:54</publishTime>
+    </File>
+    <File Include="custom/line.js">
+      <publishTime>09/13/2022 12:17:54</publishTime>
+    </File>
+    <File Include="custom/pie.js">
+      <publishTime>09/13/2022 12:17:54</publishTime>
+    </File>
+    <File Include="custom/realtime.js">
+      <publishTime>09/13/2022 12:17:54</publishTime>
+    </File>
+    <File Include="custom/rectangular-pie.js">
+      <publishTime>09/13/2022 12:17:54</publishTime>
+    </File>
+    <File Include="custom/scatter.js">
+      <publishTime>09/13/2022 12:17:54</publishTime>
+    </File>
+    <File Include="custom/stacked-area.js">
+      <publishTime>09/13/2022 12:17:54</publishTime>
+    </File>
+    <File Include="custom/stacked-horizontal.js">
+      <publishTime>09/13/2022 12:17:54</publishTime>
+    </File>
+    <File Include="custom/stacked-vertical.js">
+      <publishTime>09/13/2022 12:17:54</publishTime>
+    </File>
+    <File Include="custom/vertical.js">
+      <publishTime>09/13/2022 12:17:54</publishTime>
+    </File>
+    <File Include="custom/vssver.scc">
+      <publishTime>09/13/2022 12:17:54</publishTime>
+    </File>
+    <File Include="Dashboard/CurrentProductionModel.aspx">
+      <publishTime>06/07/2026 12:23:29</publishTime>
+    </File>
+    <File Include="Dashboard/DistributionWeightScale.aspx">
+      <publishTime>06/15/2026 12:33:54</publishTime>
+    </File>
     <File Include="Dashboard/Index.aspx">
       <publishTime>09/13/2022 12:17:52</publishTime>
+    </File>
+    <File Include="Dashboard/IndexWeightScale.aspx">
+      <publishTime>06/07/2026 15:13:30</publishTime>
     </File>
     <File Include="Dashboard/TarVsPr.aspx">
       <publishTime>09/13/2022 12:17:52</publishTime>
@@ -8930,6 +9017,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="EntityFramework/Model1.edmx.diagram">
       <publishTime>09/13/2022 12:17:52</publishTime>
+    </File>
+    <File Include="EntityFramework/RMILCSDbEntities.edmx.diagram">
+      <publishTime>06/15/2026 16:46:47</publishTime>
     </File>
     <File Include="EntityFramework/RMILETracker.edmx.diagram">
       <publishTime>05/25/2026 11:42:41</publishTime>
@@ -9286,7 +9376,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/13/2022 12:17:54</publishTime>
     </File>
     <File Include="MasterPages/Main.Master">
-      <publishTime>05/09/2026 09:55:56</publishTime>
+      <publishTime>06/15/2026 11:39:45</publishTime>
     </File>
     <File Include="MasterPages/Prod.Master">
       <publishTime>09/13/2022 12:17:52</publishTime>
@@ -9298,7 +9388,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/25/2026 12:44:58</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>06/01/2026 11:05:11</publishTime>
+      <publishTime>06/16/2026 09:16:34</publishTime>
     </File>
     <File Include="Production/BarcodeSearch.aspx">
       <publishTime>09/13/2022 12:17:52</publishTime>
@@ -9321,8 +9411,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Production/RptRmilProduction.aspx">
       <publishTime>09/13/2022 12:17:52</publishTime>
     </File>
+    <File Include="ProductionDetails/BarcodeSearchWeight.aspx">
+      <publishTime>06/15/2026 16:57:11</publishTime>
+    </File>
     <File Include="QC/RmilBoxAssingedProducts.aspx">
-      <publishTime>05/19/2026 10:17:00</publishTime>
+      <publishTime>06/13/2026 11:10:41</publishTime>
     </File>
     <File Include="QC/RmilQc.aspx">
       <publishTime>05/03/2026 10:50:34</publishTime>
@@ -9343,7 +9436,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/25/2026 11:46:40</publishTime>
     </File>
     <File Include="Reports/RptProductionMove.aspx">
-      <publishTime>05/13/2026 12:48:55</publishTime>
+      <publishTime>06/13/2026 10:04:16</publishTime>
     </File>
     <File Include="Reports/RptQcHist.aspx">
       <publishTime>09/13/2022 12:17:52</publishTime>
@@ -9403,7 +9496,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/13/2022 12:17:52</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/09/2026 16:49:46</publishTime>
+      <publishTime>06/13/2026 11:17:41</publishTime>
     </File>
   </ItemGroup>
 </Project>

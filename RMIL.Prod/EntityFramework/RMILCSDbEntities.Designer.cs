@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'G:\Service Projects And System\ALL Project Code\rmil-production\RMIL.Prod\EntityFramework\RMILETracker.edmx'. 
+﻿// T4 code generation is enabled for model 'G:\Service Projects And System After 4.6.26\ALLService Project Code\rmil-production\RMIL.Prod\EntityFramework\RMILCSDbEntities.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

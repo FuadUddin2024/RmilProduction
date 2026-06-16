@@ -506,6 +506,7 @@
     <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
     <Property Name="EntryPC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="ModifiedPC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ExtraPartCost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="FieldParts">
     <Key>
@@ -582,8 +583,8 @@
       <PropertyRef Name="AssignBoxID" />
     </Key>
     <Property Name="AssignBoxID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="BoxBarCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="ProductModelBarcode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BoxBarCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProductModelBarcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="PackedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="IsSent" Type="Int32" Nullable="false" />
     <Property Name="EntryBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -4286,6 +4287,10 @@
     <EntitySet Name="vw_RmilBoxDetailsV" EntityType="RMILCSDbModel.vw_RmilBoxDetailsV" />
     <EntitySet Name="vw_DistributionDetailsVVV" EntityType="RMILCSDbModel.vw_DistributionDetailsVVV" />
     <EntitySet Name="vw_DistributionDetailsVVVV" EntityType="RMILCSDbModel.vw_DistributionDetailsVVVV" />
+    <FunctionImport Name="sp_GetProductionByShiftDay" ReturnType="Collection(RMILCSDbModel.sp_GetProductionByShiftDay_Result)" />
+    <FunctionImport Name="sp_GetProductionByShiftNight" ReturnType="Collection(RMILCSDbModel.sp_GetProductionByShiftNight_Result)" />
+    <EntitySet Name="vw_MasterBoxAssignedDetailsVV" EntityType="RMILCSDbModel.vw_MasterBoxAssignedDetailsVV" />
+    <EntitySet Name="vw_MasterBoxDetailsVV" EntityType="RMILCSDbModel.vw_MasterBoxDetailsVV" />
   </EntityContainer>
   <ComplexType Name="GetCostingDetails1_Result">
     <Property Type="Int32" Name="ComplainNo" Nullable="false" />
@@ -4979,5 +4984,55 @@
     <Property Name="DeliveryTypeID" Type="Int32" Nullable="false" />
     <Property Name="DeliveryTypeName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="EntryDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <ComplexType Name="sp_GetProductionByShiftDay_Result">
+    <Property Type="Int32" Name="TotalProduction" Nullable="true" />
+    <Property Type="String" Name="PrModelName" Nullable="false" MaxLength="150" />
+    <Property Type="Int32" Name="ModelCode" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_GetProductionByShiftNight_Result">
+    <Property Type="Int32" Name="TotalProduction" Nullable="true" />
+    <Property Type="String" Name="PrModelName" Nullable="false" MaxLength="150" />
+    <Property Type="Int32" Name="ModelCode" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="vw_MasterBoxAssignedDetailsVV">
+    <Key>
+      <PropertyRef Name="AssignBoxID" />
+      <PropertyRef Name="ProductName" />
+      <PropertyRef Name="ModelCode" />
+      <PropertyRef Name="PrModelName" />
+      <PropertyRef Name="PackedBy" />
+      <PropertyRef Name="DepotName" />
+    </Key>
+    <Property Name="AssignBoxID" Type="Int32" Nullable="false" />
+    <Property Name="BoxBarCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProductModelBarcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProductName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ModelCode" Type="Int32" Nullable="false" />
+    <Property Name="PrModelName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="MfDate" Type="DateTime" Precision="0" />
+    <Property Name="PackedBy" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EntryDate" Type="DateTime" Precision="3" />
+    <Property Name="DepotName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="vw_MasterBoxDetailsVV">
+    <Key>
+      <PropertyRef Name="AssignBoxID" />
+      <PropertyRef Name="ProductName" />
+      <PropertyRef Name="ModelCode" />
+      <PropertyRef Name="PrModelName" />
+      <PropertyRef Name="PackedBy" />
+      <PropertyRef Name="DepotName" />
+    </Key>
+    <Property Name="AssignBoxID" Type="Int32" Nullable="false" />
+    <Property Name="BoxBarCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProductModelBarcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProductName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ModelCode" Type="Int32" Nullable="false" />
+    <Property Name="PrModelName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="MfDate" Type="DateTime" Precision="0" />
+    <Property Name="PackedBy" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EntryDate" Type="DateTime" Precision="3" />
+    <Property Name="DepotName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

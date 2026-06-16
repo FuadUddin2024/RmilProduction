@@ -102,6 +102,11 @@ namespace RMIL.Prod.DAL
             List<vw_RmBarProdInfo> qList = ObjRmilcsDbEntities.vw_RmBarProdInfo.Where(c => c.DBarcode == barCode).ToList();
             return qList;
         }
+        public List<vw_RmilProductDistributionInfo> GetModelInfoByBarCodeNew(string barCode)
+        {
+            List<vw_RmilProductDistributionInfo> qList = ObjRmilcsDbEntities.vw_RmilProductDistributionInfo.Where(c => c.DBarcode == barCode).ToList();
+            return qList;
+        }
         //public List<vw_FrAssignWiseProdList> GetProductionListByItemId(int itemid)
         //{
         //    List<vw_FrAssignWiseProdList> productionList = ObjRmilcsDbEntities.vw_FrAssignWiseProdList.Where(c => c.FrId == itemid).ToList();

@@ -170,6 +170,10 @@
                                                 SortExpression="DepotName" UniqueName="DepotName" AutoPostBackOnFilter="true" CurrentFilterFunction="Contains"
                                                 ShowFilterIcon="True">
                                             </telerik:GridBoundColumn>
+                                             <telerik:GridBoundColumn FilterControlWidth="105px" DataField="EntryDate" HeaderText="Scanning Date"
+                                                SortExpression="EntryDate" UniqueName="EntryDate" AutoPostBackOnFilter="true" CurrentFilterFunction="Contains"
+                                                ShowFilterIcon="True">
+                                            </telerik:GridBoundColumn>
                                         </Columns>
                                     </MasterTableView>
                                 </telerik:RadGrid>
