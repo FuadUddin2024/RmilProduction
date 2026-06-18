@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterPages/Main.Master" CodeBehind="RmilDistributionOut.aspx.cs" Inherits="RMIL.Prod.Distribution.RmilDistributionOut" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterPages/Main.Master" CodeBehind="RmilDistributionDepoOut.aspx.cs" Inherits="RMIL.Prod.Distribution.RmilDistributionDepoOut" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../assets/css/gridPaging.css" rel="stylesheet" />
     <style type="text/css">
@@ -75,125 +75,159 @@
                     <div class="col-md-12">
                         <div class="panel panel-default">
                             <div class="panel-heading" style="background-color: #82e0aa">
-                                <div class="pull-left"><strong>Depo To Dealer</strong></div>
+                                <div class="pull-left"><strong>Depo Out</strong></div>
                                 <div class="clearfix"></div>
                             </div>
                             <div class="panel-body" style="background-color: #99ccff">
                                 <div class="row">
-                                      <div class="col-md-4">
-                                            <div class="form-horizontal">
-                                                <div class="form-group">
-                                                    <label class="control-label col-lg-4">Master Barcode</label>
-                                                    <div class="col-lg-8">
-                                                    <asp:TextBox ID="ddlmaster"
-                                                            runat="server"
-                                                            CssClass="form-control"
-                                                            AutoPostBack="True"
-                                                            OnTextChanged="txtBarCode_TextChanged">
-                                                        </asp:TextBox>
-                                                       <%-- <asp:TextBox ID="ddlmaster" runat="server" class="form-control" OnSelectedIndexChanged="txtBarCode_TextChanged" AutoPostBack="True"></asp:TextBox>--%>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                      </div>
-                                      <div class="col-md-4">
-                                            <div class="form-horizontal">
-                                                <div class="form-group">
-                                                    <label class="control-label col-lg-4">Product Code</label>
-                                                    <div class="col-lg-8">
-                                                           <asp:TextBox ID="ddlproductcode"
-                        runat="server"
-                        CssClass="form-control"
-                        AutoPostBack="true"
-                        OnTextChanged="ddlproductcodename_SelectedIndexChanged">
-                    </asp:TextBox>
-                                                       <%--  <asp:TextBox ID="ddlproductcode" runat="server" class="form-control" OnSelectedIndexChanged="ddlproductcodename_SelectedIndexChanged" AutoPostBack="True"></asp:TextBox>--%>
-                                                    </div>
+                                  <div class="col-md-3">
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="control-label col-lg-4">Product Code</label>
+                                                <div class="col-lg-8">
+                                                       <asp:TextBox ID="ddlproductcode"
+                    runat="server"
+                    CssClass="form-control"
+                    AutoPostBack="true"
+                    OnTextChanged="ddlproductcodename_SelectedIndexChanged">
+                </asp:TextBox>
+                                                   <%--  <asp:TextBox ID="ddlproductcode" runat="server" class="form-control" OnSelectedIndexChanged="ddlproductcodename_SelectedIndexChanged" AutoPostBack="True"></asp:TextBox>--%>
                                                 </div>
                                             </div>
                                         </div>
-                                      <div class="col-md-4">
-                                            <div class="form-horizontal">
-                                                <div class="form-group">
-                                                    <label class="control-label col-lg-4">Product Name</label>
-                                                    <div class="col-lg-8">
-                                                         <asp:TextBox ID="ddlmodelname" runat="server" class="form-control" ></asp:TextBox>
-                                                    </div>
+                                    </div>
+                                  <div class="col-md-3">
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="control-label col-lg-4">Product Name</label>
+                                                <div class="col-lg-8">
+                                                     <asp:TextBox ID="ddlmodelname" runat="server" class="form-control" ></asp:TextBox>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+                                  <div class="col-md-3">
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="control-label col-lg-4">From Depot name</label>
+                                                <div class="col-lg-8">
+                                                     <asp:DropDownList ID="ddldepo" runat="server" CssClass="form-control">
+                                                    </asp:DropDownList>
+                                                </div>
+                                            </div>
+                                        </div>
+                               </div>
+                                  <div class="col-md-3">
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="control-label col-lg-4">Delivery Type</label>
+                                                <div class="col-lg-8">
+                                                    <asp:DropDownList ID="ddldeliverytype" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddltodepo_SelectedIndexChanged" AutoPostBack="True">
+                                                    </asp:DropDownList>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" runat="server" id="delaerdetails">
+                                <div class="col-md-3">
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="control-label col-lg-4">Dealer Code</label>
+                                                <div class="col-lg-8">
+                                                <asp:TextBox ID="ddldealercode" runat="server" 
+                                                 CssClass="form-control"
+                                                 OnTextChanged="ddldealer_SelectedIndexChanged"
+                                                    AutoPostBack="true">
+                                                </asp:TextBox>
+                                                                        </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <div class="col-md-3">
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="control-label col-lg-4">Dealer name</label>
+                                                <div class="col-lg-8">
+                                                     <asp:TextBox ID="ddldealername" runat="server" class="form-control" ></asp:TextBox>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <div class="col-md-3">
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="control-label col-lg-4">Dealer Address</label>
+                                                <div class="col-lg-8">
+                                                     <asp:TextBox ID="ddldealeraddress" runat="server" class="form-control"></asp:TextBox>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <div class="col-md-3">
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="control-label col-lg-4">Vehicle Number</label>
+                                                <div class="col-lg-8">
+                                                     <asp:TextBox ID="ddlVehiclenumber" runat="server" class="form-control" ></asp:TextBox>
+                                                </div>
+                                            </div>
+                                        </div>
+                               </div>
+                                </div>
+                                <div class="row" runat="server" id="todepo">
+                                    <div class="col-md-4">
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="control-label col-lg-4">To Depot name</label>
+                                                <div class="col-lg-8">
+                                                     <asp:DropDownList ID="ddltodepo" runat="server" CssClass="form-control">
+                                                    </asp:DropDownList>
+                                                </div>
+                                            </div>
+                                        </div>
+                               </div>
+                                  <div class="col-md-4">
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="control-label col-lg-4">Vehicle Number</label>
+                                                <div class="col-lg-8">
+                                                     <asp:TextBox ID="todepovehiclenumer" runat="server" class="form-control" ></asp:TextBox>
+                                                </div>
+                                            </div>
+                                        </div>
+                               </div>
                                 </div>
                                 <div class="row">
-                                      <div class="col-md-4">
-                                            <div class="form-horizontal">
-                                                <div class="form-group">
-                                                    <label class="control-label col-lg-4">From Depot name</label>
-                                                    <div class="col-lg-8">
-                                                         <asp:DropDownList ID="ddldepo" runat="server" CssClass="form-control">
-                                                        </asp:DropDownList>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                   </div>
-                                      <div class="col-md-4">
-                                            <div class="form-horizontal">
-                                                <div class="form-group">
-                                                    <label class="control-label col-lg-4">Delivery Type</label>
-                                                    <div class="col-lg-8">
-                                                        <asp:DropDownList ID="ddldeliverytype" runat="server" CssClass="form-control">
-                                                        </asp:DropDownList>
-                                                    </div>
+                                  <div class="col-md-4">
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="control-label col-lg-4">Product Type</label>
+                                                <div class="col-lg-8"> 
+                                                   <asp:DropDownList ID="ddlpackagingtype" runat="server" CssClass="form-control" >
+                                                    </asp:DropDownList>
                                                 </div>
                                             </div>
                                         </div>
-                                      <div class="col-md-4">
-                                            <div class="form-horizontal">
-                                                <div class="form-group">
-                                                    <label class="control-label col-lg-4">Dealer Code</label>
-                                                    <div class="col-lg-8">
-                                                    <asp:TextBox ID="ddldealercode" runat="server" 
-                                                     CssClass="form-control"
-                                                     OnTextChanged="ddldealer_SelectedIndexChanged"
-                                                        AutoPostBack="true">
+                                    </div>
+                                   <div class="col-md-4"  id="mastercartoon">
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="control-label col-lg-4">Barcode</label>
+                                                <div class="col-lg-8">
+                                                <asp:TextBox ID="ddlmaster"
+                                                        runat="server"
+                                                        CssClass="form-control"
+                                                        AutoPostBack="True"
+                                                        OnTextChanged="txtBarCode_TextChanged">
                                                     </asp:TextBox>
-                                                                            </div>
+                                                   <%-- <asp:TextBox ID="ddlmaster" runat="server" class="form-control" OnSelectedIndexChanged="txtBarCode_TextChanged" AutoPostBack="True"></asp:TextBox>--%>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4">
-                                            <div class="form-horizontal">
-                                                <div class="form-group">
-                                                    <label class="control-label col-lg-4">Dealer name</label>
-                                                    <div class="col-lg-8">
-                                                         <asp:TextBox ID="ddldealername" runat="server" class="form-control" ></asp:TextBox>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    <div class="col-md-4">
-                                            <div class="form-horizontal">
-                                                <div class="form-group">
-                                                    <label class="control-label col-lg-4">Dealer Address</label>
-                                                    <div class="col-lg-8">
-                                                         <asp:TextBox ID="ddldealeraddress" runat="server" class="form-control"></asp:TextBox>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    <div class="col-md-4">
-                                            <div class="form-horizontal">
-                                                <div class="form-group">
-                                                    <label class="control-label col-lg-4">Vehicle Number</label>
-                                                    <div class="col-lg-8">
-                                                         <asp:TextBox ID="ddlVehiclenumber" runat="server" class="form-control" ></asp:TextBox>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                   </div>
-                                </div>
-                               <div class="row">
                                     <div class="col-md-12">
                                       <asp:GridView ID="gvCart" runat="server" AutoGenerateColumns="false"
                                         OnRowCommand="gvCart_RowCommand">

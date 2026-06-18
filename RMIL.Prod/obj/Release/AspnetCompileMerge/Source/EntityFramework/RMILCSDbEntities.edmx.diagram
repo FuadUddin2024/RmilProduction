@@ -191,6 +191,8 @@
         <EntityTypeShape EntityType="RMILCSDbModel.vw_UserWiseLineList" Width="1.5" PointX="46.75" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="RMILCSDbModel.vw_WarrantyInfoList" Width="1.5" PointX="8.75" PointY="46.75" IsExpanded="true" />
         <EntityTypeShape EntityType="RMILCSDbModel.vw_RmilProductDistributionInfo" Width="1.5" PointX="17.375" PointY="46.75" />
+        <EntityTypeShape EntityType="RMILCSDbModel.vw_ProductDistributionHistory" Width="1.5" PointX="27.375" PointY="46.75" />
+        <EntityTypeShape EntityType="RMILCSDbModel.vw_ProductDistributionHistoryV" Width="1.5" PointX="29.375" PointY="46.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

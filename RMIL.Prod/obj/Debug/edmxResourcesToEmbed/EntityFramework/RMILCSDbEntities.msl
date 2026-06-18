@@ -4752,5 +4752,50 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="vw_ProductDistributionHistory">
+      <EntityTypeMapping TypeName="RMILCSDbModel.vw_ProductDistributionHistory">
+        <MappingFragment StoreEntitySet="vw_ProductDistributionHistory">
+          <ScalarProperty Name="Depooutydate" ColumnName="Depooutydate" />
+          <ScalarProperty Name="Depooutsender" ColumnName="Depooutsender" />
+          <ScalarProperty Name="ToDepoName" ColumnName="ToDepoName" />
+          <ScalarProperty Name="VehicleNumber" ColumnName="VehicleNumber" />
+          <ScalarProperty Name="DealerAddress" ColumnName="DealerAddress" />
+          <ScalarProperty Name="DealerName" ColumnName="DealerName" />
+          <ScalarProperty Name="DealerCode" ColumnName="DealerCode" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="FromDepo" ColumnName="FromDepo" />
+          <ScalarProperty Name="PackedBy" ColumnName="PackedBy" />
+          <ScalarProperty Name="MfDate" ColumnName="MfDate" />
+          <ScalarProperty Name="ModelCode" ColumnName="ModelCode" />
+          <ScalarProperty Name="PrModelName" ColumnName="PrModelName" />
+          <ScalarProperty Name="DBarcode" ColumnName="DBarcode" />
+          <ScalarProperty Name="BoxBarCode" ColumnName="BoxBarCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_ProductDistributionHistoryV">
+      <EntityTypeMapping TypeName="RMILCSDbModel.vw_ProductDistributionHistoryV">
+        <MappingFragment StoreEntitySet="vw_ProductDistributionHistoryV">
+          <ScalarProperty Name="Depooutydate" ColumnName="Depooutydate" />
+          <ScalarProperty Name="Depooutsender" ColumnName="Depooutsender" />
+          <ScalarProperty Name="ToDepoName" ColumnName="ToDepoName" />
+          <ScalarProperty Name="VehicleNumber" ColumnName="VehicleNumber" />
+          <ScalarProperty Name="DealerAddress" ColumnName="DealerAddress" />
+          <ScalarProperty Name="DealerName" ColumnName="DealerName" />
+          <ScalarProperty Name="DealerCode" ColumnName="DealerCode" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="FromDepo" ColumnName="FromDepo" />
+          <ScalarProperty Name="PackedBy" ColumnName="PackedBy" />
+          <ScalarProperty Name="MfDate" ColumnName="MfDate" />
+          <ScalarProperty Name="ModelCode" ColumnName="ModelCode" />
+          <ScalarProperty Name="PrModelName" ColumnName="PrModelName" />
+          <ScalarProperty Name="DBarcode" ColumnName="DBarcode" />
+          <ScalarProperty Name="BoxBarCode" ColumnName="BoxBarCode" />
+          <ScalarProperty Name="PrModelId" ColumnName="PrModelId" />
+          <ScalarProperty Name="RmPmId" ColumnName="RmPmId" />
+          <ScalarProperty Name="RmPdId" ColumnName="RmPdId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

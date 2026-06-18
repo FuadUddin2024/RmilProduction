@@ -49,19 +49,15 @@
                                         AllowPaging="True" PageSize="20" AutoGenerateColumns="False" Style="font-family: calibri !important"
                                         DataKeyNames="RmPdId" runat="server">
                                         <Columns>
-                                            <asp:BoundField HeaderText="ID" DataField="RmPdId" Visible="False">
+                                            <asp:BoundField HeaderText="Master Cartoon  Barcode No" DataField="BoxBarCode" Visible="False">
                                                 <HeaderStyle CssClass="HeaderCenterStyle"></HeaderStyle>
                                                 <ItemStyle CssClass="HeaderCenterStyle"></ItemStyle>
                                             </asp:BoundField>
-                                             <asp:BoundField HeaderText="BarCode No" DataField="DBarcode">
+                                             <asp:BoundField HeaderText="Product Barcode No" DataField="DBarcode">
                                                 <HeaderStyle CssClass="HeaderCenterStyle"></HeaderStyle>
                                                 <ItemStyle CssClass="HeaderCenterStyle"></ItemStyle>
                                             </asp:BoundField>
-                                            <asp:BoundField HeaderText="Product" DataField="ProductName">
-                                                <HeaderStyle CssClass="HeaderCenterStyle"></HeaderStyle>
-                                                <ItemStyle CssClass="HeaderCenterStyle"></ItemStyle>
-                                            </asp:BoundField>
-                                            <asp:BoundField HeaderText="Pr Model" DataField="PrModelName">
+                                            <asp:BoundField HeaderText="Product Name" DataField="PrModelName">
                                                 <HeaderStyle CssClass="HeaderCenterStyle"></HeaderStyle>
                                                 <ItemStyle CssClass="HeaderCenterStyle"></ItemStyle>
                                             </asp:BoundField>
@@ -69,15 +65,47 @@
                                                 <HeaderStyle CssClass="HeaderCenterStyle"></HeaderStyle>
                                                 <ItemStyle CssClass="HeaderCenterStyle"></ItemStyle>
                                             </asp:BoundField>
-                                             <asp:BoundField HeaderText="Production Date" DataField="MfDate" DataFormatString="{0:d-MMM-yyyy}">
+                                            <asp:BoundField HeaderText="Manufacturing Date" DataField="MfDate">
                                                 <HeaderStyle CssClass="HeaderCenterStyle"></HeaderStyle>
                                                 <ItemStyle CssClass="HeaderCenterStyle"></ItemStyle>
                                             </asp:BoundField>
-                                            <asp:BoundField HeaderText="Scanning Date" DataField="EntryDate" DataFormatString="{0:d-MMM-yyyy}">
+                                            <asp:BoundField HeaderText="Packed By" DataField="PackedBy">
                                                 <HeaderStyle CssClass="HeaderCenterStyle"></HeaderStyle>
                                                 <ItemStyle CssClass="HeaderCenterStyle"></ItemStyle>
                                             </asp:BoundField>
-                                            <asp:BoundField HeaderText="Distribution Date" DataField="SendDate" DataFormatString="{0:d-MMM-yyyy}">
+                                            <asp:BoundField HeaderText="From Depo Name" DataField="FromDepo">
+                                                <HeaderStyle CssClass="HeaderCenterStyle"></HeaderStyle>
+                                                <ItemStyle CssClass="HeaderCenterStyle"></ItemStyle>
+                                            </asp:BoundField>
+                                            <asp:BoundField HeaderText="Scanning Date" DataField="EntryDate">
+                                                <HeaderStyle CssClass="HeaderCenterStyle"></HeaderStyle>
+                                                <ItemStyle CssClass="HeaderCenterStyle"></ItemStyle>
+                                            </asp:BoundField>
+                                            <asp:BoundField HeaderText="Dealer Code" DataField="DealerCode">
+                                                <HeaderStyle CssClass="HeaderCenterStyle"></HeaderStyle>
+                                                <ItemStyle CssClass="HeaderCenterStyle"></ItemStyle>
+                                            </asp:BoundField>
+                                            <asp:BoundField HeaderText="Dealer Name" DataField="DealerName">
+                                                <HeaderStyle CssClass="HeaderCenterStyle"></HeaderStyle>
+                                                <ItemStyle CssClass="HeaderCenterStyle"></ItemStyle>
+                                            </asp:BoundField>
+                                            <asp:BoundField HeaderText="Dealer Address" DataField="DealerAddress">
+                                                <HeaderStyle CssClass="HeaderCenterStyle"></HeaderStyle>
+                                                <ItemStyle CssClass="HeaderCenterStyle"></ItemStyle>
+                                            </asp:BoundField>
+                                            <asp:BoundField HeaderText="Vehicle Number" DataField="VehicleNumber">
+                                                <HeaderStyle CssClass="HeaderCenterStyle"></HeaderStyle>
+                                                <ItemStyle CssClass="HeaderCenterStyle"></ItemStyle>
+                                            </asp:BoundField>
+                                            <asp:BoundField HeaderText="To Depo Name" DataField="ToDepoName">
+                                                <HeaderStyle CssClass="HeaderCenterStyle"></HeaderStyle>
+                                                <ItemStyle CssClass="HeaderCenterStyle"></ItemStyle>
+                                            </asp:BoundField>
+                                           <asp:BoundField HeaderText="Sender Name" DataField="Depooutsender">
+                                                <HeaderStyle CssClass="HeaderCenterStyle"></HeaderStyle>
+                                                <ItemStyle CssClass="HeaderCenterStyle"></ItemStyle>
+                                            </asp:BoundField>
+                                            <asp:BoundField HeaderText="Depot Scanned Date" DataField="Depooutydate">
                                                 <HeaderStyle CssClass="HeaderCenterStyle"></HeaderStyle>
                                                 <ItemStyle CssClass="HeaderCenterStyle"></ItemStyle>
                                             </asp:BoundField>

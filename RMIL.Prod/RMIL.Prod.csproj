@@ -194,6 +194,7 @@
     <Content Include="Dashboard\IndexWeightScale.aspx" />
     <Content Include="Dashboard\TarVsPr.aspx" />
     <Content Include="Dashboard\CurrentProductionModel.aspx" />
+    <Content Include="Distribution\RmilDistributionDepoOut.aspx" />
     <Content Include="Distribution\RmilDistributionReturn.aspx" />
     <Content Include="Distribution\RmilDistributionOut.aspx" />
     <Content Include="EntityFramework\RMILCSDbEntities.Context.tt">
@@ -3344,6 +3345,13 @@
     <Compile Include="Dashboard\CurrentProductionModel.aspx.designer.cs">
       <DependentUpon>CurrentProductionModel.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Distribution\RmilDistributionDepoOut.aspx.cs">
+      <DependentUpon>RmilDistributionDepoOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Distribution\RmilDistributionDepoOut.aspx.designer.cs">
+      <DependentUpon>RmilDistributionDepoOut.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Distribution\RmilDistributionReturn.aspx.cs">
       <DependentUpon>RmilDistributionReturn.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3836,6 +3844,12 @@
       <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_ProdDetails.cs">
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\vw_ProductDistributionHistory.cs">
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\vw_ProductDistributionHistoryV.cs">
       <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_ProductList.cs">

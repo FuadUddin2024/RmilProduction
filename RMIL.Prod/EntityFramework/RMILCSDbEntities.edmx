@@ -3240,6 +3240,58 @@ warning 6002: The table/view 'RMILCSDb.dbo.vw_ProdDetails' does not have a prima
           <Property Name="EntryDate" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'RMILCSDb.dbo.vw_ProductDistributionHistory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_ProductDistributionHistory">
+          <Key>
+            <PropertyRef Name="PrModelName" />
+            <PropertyRef Name="ModelCode" />
+            <PropertyRef Name="FromDepo" />
+          </Key>
+          <Property Name="BoxBarCode" Type="varchar" MaxLength="50" />
+          <Property Name="DBarcode" Type="nvarchar" MaxLength="50" />
+          <Property Name="PrModelName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ModelCode" Type="int" Nullable="false" />
+          <Property Name="MfDate" Type="date" />
+          <Property Name="PackedBy" Type="nvarchar(max)" />
+          <Property Name="FromDepo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EntryDate" Type="datetime" />
+          <Property Name="DealerCode" Type="int" />
+          <Property Name="DealerName" Type="nvarchar" MaxLength="100" />
+          <Property Name="DealerAddress" Type="nvarchar" MaxLength="450" />
+          <Property Name="VehicleNumber" Type="nvarchar" MaxLength="450" />
+          <Property Name="ToDepoName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Depooutsender" Type="nvarchar" MaxLength="50" />
+          <Property Name="Depooutydate" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RMILCSDb.dbo.vw_ProductDistributionHistoryV' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_ProductDistributionHistoryV">
+          <Key>
+            <PropertyRef Name="RmPdId" />
+            <PropertyRef Name="PrModelName" />
+            <PropertyRef Name="ModelCode" />
+            <PropertyRef Name="FromDepo" />
+          </Key>
+          <Property Name="RmPdId" Type="bigint" Nullable="false" />
+          <Property Name="RmPmId" Type="bigint" />
+          <Property Name="PrModelId" Type="int" />
+          <Property Name="BoxBarCode" Type="varchar" MaxLength="50" />
+          <Property Name="DBarcode" Type="nvarchar" MaxLength="50" />
+          <Property Name="PrModelName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ModelCode" Type="int" Nullable="false" />
+          <Property Name="MfDate" Type="date" />
+          <Property Name="PackedBy" Type="nvarchar(max)" />
+          <Property Name="FromDepo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EntryDate" Type="datetime" />
+          <Property Name="DealerCode" Type="int" />
+          <Property Name="DealerName" Type="nvarchar" MaxLength="100" />
+          <Property Name="DealerAddress" Type="nvarchar" MaxLength="450" />
+          <Property Name="VehicleNumber" Type="nvarchar" MaxLength="450" />
+          <Property Name="ToDepoName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Depooutsender" Type="nvarchar" MaxLength="50" />
+          <Property Name="Depooutydate" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'RMILCSDb.dbo.vw_ProductList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vw_ProductList">
           <Key>
@@ -6154,6 +6206,47 @@ FROM [dbo].[vw_PendingComplainNEWVVVVV] AS [vw_PendingComplainNEWVVVVV]</Definin
 [vw_ProdDetails].[DBarcode] AS [DBarcode], 
 [vw_ProdDetails].[EntryDate] AS [EntryDate]
 FROM [dbo].[vw_ProdDetails] AS [vw_ProdDetails]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_ProductDistributionHistory" EntityType="Self.vw_ProductDistributionHistory" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vw_ProductDistributionHistory].[BoxBarCode] AS [BoxBarCode], 
+[vw_ProductDistributionHistory].[DBarcode] AS [DBarcode], 
+[vw_ProductDistributionHistory].[PrModelName] AS [PrModelName], 
+[vw_ProductDistributionHistory].[ModelCode] AS [ModelCode], 
+[vw_ProductDistributionHistory].[MfDate] AS [MfDate], 
+[vw_ProductDistributionHistory].[PackedBy] AS [PackedBy], 
+[vw_ProductDistributionHistory].[FromDepo] AS [FromDepo], 
+[vw_ProductDistributionHistory].[EntryDate] AS [EntryDate], 
+[vw_ProductDistributionHistory].[DealerCode] AS [DealerCode], 
+[vw_ProductDistributionHistory].[DealerName] AS [DealerName], 
+[vw_ProductDistributionHistory].[DealerAddress] AS [DealerAddress], 
+[vw_ProductDistributionHistory].[VehicleNumber] AS [VehicleNumber], 
+[vw_ProductDistributionHistory].[ToDepoName] AS [ToDepoName], 
+[vw_ProductDistributionHistory].[Depooutsender] AS [Depooutsender], 
+[vw_ProductDistributionHistory].[Depooutydate] AS [Depooutydate]
+FROM [dbo].[vw_ProductDistributionHistory] AS [vw_ProductDistributionHistory]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_ProductDistributionHistoryV" EntityType="Self.vw_ProductDistributionHistoryV" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vw_ProductDistributionHistoryV].[RmPdId] AS [RmPdId], 
+[vw_ProductDistributionHistoryV].[RmPmId] AS [RmPmId], 
+[vw_ProductDistributionHistoryV].[PrModelId] AS [PrModelId], 
+[vw_ProductDistributionHistoryV].[BoxBarCode] AS [BoxBarCode], 
+[vw_ProductDistributionHistoryV].[DBarcode] AS [DBarcode], 
+[vw_ProductDistributionHistoryV].[PrModelName] AS [PrModelName], 
+[vw_ProductDistributionHistoryV].[ModelCode] AS [ModelCode], 
+[vw_ProductDistributionHistoryV].[MfDate] AS [MfDate], 
+[vw_ProductDistributionHistoryV].[PackedBy] AS [PackedBy], 
+[vw_ProductDistributionHistoryV].[FromDepo] AS [FromDepo], 
+[vw_ProductDistributionHistoryV].[EntryDate] AS [EntryDate], 
+[vw_ProductDistributionHistoryV].[DealerCode] AS [DealerCode], 
+[vw_ProductDistributionHistoryV].[DealerName] AS [DealerName], 
+[vw_ProductDistributionHistoryV].[DealerAddress] AS [DealerAddress], 
+[vw_ProductDistributionHistoryV].[VehicleNumber] AS [VehicleNumber], 
+[vw_ProductDistributionHistoryV].[ToDepoName] AS [ToDepoName], 
+[vw_ProductDistributionHistoryV].[Depooutsender] AS [Depooutsender], 
+[vw_ProductDistributionHistoryV].[Depooutydate] AS [Depooutydate]
+FROM [dbo].[vw_ProductDistributionHistoryV] AS [vw_ProductDistributionHistoryV]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vw_ProductList" EntityType="Self.vw_ProductList" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -11931,6 +12024,8 @@ FROM [dbo].[vw_WarrantyInfoList] AS [vw_WarrantyInfoList]</DefiningQuery>
           <FunctionImport Name="sp_GetDistributionProductionDayShift" ReturnType="Collection(RMILCSDbModel.sp_GetDistributionProductionDayShift_Result)" />
           <FunctionImport Name="sp_GetDistributionProductionNightShift" ReturnType="Collection(RMILCSDbModel.sp_GetDistributionProductionNightShift_Result)" />
           <EntitySet Name="vw_RmilProductDistributionInfo" EntityType="RMILCSDbModel.vw_RmilProductDistributionInfo" />
+          <EntitySet Name="vw_ProductDistributionHistory" EntityType="RMILCSDbModel.vw_ProductDistributionHistory" />
+          <EntitySet Name="vw_ProductDistributionHistoryV" EntityType="RMILCSDbModel.vw_ProductDistributionHistoryV" />
         </EntityContainer>
         <ComplexType Name="GetCostingDetails1_Result">
           <Property Type="Int32" Name="ComplainNo" Nullable="false" />
@@ -12391,6 +12486,54 @@ FROM [dbo].[vw_WarrantyInfoList] AS [vw_WarrantyInfoList]</DefiningQuery>
           <Property Name="MfDate" Type="DateTime" Precision="0" />
           <Property Name="EntryDate" Type="DateTime" Precision="3" />
           <Property Name="SendDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="vw_ProductDistributionHistory">
+          <Key>
+            <PropertyRef Name="PrModelName" />
+            <PropertyRef Name="ModelCode" />
+            <PropertyRef Name="FromDepo" />
+          </Key>
+          <Property Name="BoxBarCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DBarcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PrModelName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ModelCode" Type="Int32" Nullable="false" />
+          <Property Name="MfDate" Type="DateTime" Precision="0" />
+          <Property Name="PackedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FromDepo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EntryDate" Type="DateTime" Precision="3" />
+          <Property Name="DealerCode" Type="Int32" />
+          <Property Name="DealerName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DealerAddress" Type="String" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Name="VehicleNumber" Type="String" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Name="ToDepoName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Depooutsender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Depooutydate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="vw_ProductDistributionHistoryV">
+          <Key>
+            <PropertyRef Name="RmPdId" />
+            <PropertyRef Name="PrModelName" />
+            <PropertyRef Name="ModelCode" />
+            <PropertyRef Name="FromDepo" />
+          </Key>
+          <Property Name="RmPdId" Type="Int64" Nullable="false" />
+          <Property Name="RmPmId" Type="Int64" />
+          <Property Name="PrModelId" Type="Int32" />
+          <Property Name="BoxBarCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DBarcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PrModelName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ModelCode" Type="Int32" Nullable="false" />
+          <Property Name="MfDate" Type="DateTime" Precision="0" />
+          <Property Name="PackedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FromDepo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EntryDate" Type="DateTime" Precision="3" />
+          <Property Name="DealerCode" Type="Int32" />
+          <Property Name="DealerName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DealerAddress" Type="String" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Name="VehicleNumber" Type="String" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Name="ToDepoName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Depooutsender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Depooutydate" Type="DateTime" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -17143,6 +17286,51 @@ FROM [dbo].[vw_WarrantyInfoList] AS [vw_WarrantyInfoList]</DefiningQuery>
                 <ScalarProperty Name="ProductId" ColumnName="ProductId" />
                 <ScalarProperty Name="PrModelName" ColumnName="PrModelName" />
                 <ScalarProperty Name="ModelCode" ColumnName="ModelCode" />
+                <ScalarProperty Name="PrModelId" ColumnName="PrModelId" />
+                <ScalarProperty Name="RmPmId" ColumnName="RmPmId" />
+                <ScalarProperty Name="RmPdId" ColumnName="RmPdId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_ProductDistributionHistory">
+            <EntityTypeMapping TypeName="RMILCSDbModel.vw_ProductDistributionHistory">
+              <MappingFragment StoreEntitySet="vw_ProductDistributionHistory">
+                <ScalarProperty Name="Depooutydate" ColumnName="Depooutydate" />
+                <ScalarProperty Name="Depooutsender" ColumnName="Depooutsender" />
+                <ScalarProperty Name="ToDepoName" ColumnName="ToDepoName" />
+                <ScalarProperty Name="VehicleNumber" ColumnName="VehicleNumber" />
+                <ScalarProperty Name="DealerAddress" ColumnName="DealerAddress" />
+                <ScalarProperty Name="DealerName" ColumnName="DealerName" />
+                <ScalarProperty Name="DealerCode" ColumnName="DealerCode" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="FromDepo" ColumnName="FromDepo" />
+                <ScalarProperty Name="PackedBy" ColumnName="PackedBy" />
+                <ScalarProperty Name="MfDate" ColumnName="MfDate" />
+                <ScalarProperty Name="ModelCode" ColumnName="ModelCode" />
+                <ScalarProperty Name="PrModelName" ColumnName="PrModelName" />
+                <ScalarProperty Name="DBarcode" ColumnName="DBarcode" />
+                <ScalarProperty Name="BoxBarCode" ColumnName="BoxBarCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_ProductDistributionHistoryV">
+            <EntityTypeMapping TypeName="RMILCSDbModel.vw_ProductDistributionHistoryV">
+              <MappingFragment StoreEntitySet="vw_ProductDistributionHistoryV">
+                <ScalarProperty Name="Depooutydate" ColumnName="Depooutydate" />
+                <ScalarProperty Name="Depooutsender" ColumnName="Depooutsender" />
+                <ScalarProperty Name="ToDepoName" ColumnName="ToDepoName" />
+                <ScalarProperty Name="VehicleNumber" ColumnName="VehicleNumber" />
+                <ScalarProperty Name="DealerAddress" ColumnName="DealerAddress" />
+                <ScalarProperty Name="DealerName" ColumnName="DealerName" />
+                <ScalarProperty Name="DealerCode" ColumnName="DealerCode" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="FromDepo" ColumnName="FromDepo" />
+                <ScalarProperty Name="PackedBy" ColumnName="PackedBy" />
+                <ScalarProperty Name="MfDate" ColumnName="MfDate" />
+                <ScalarProperty Name="ModelCode" ColumnName="ModelCode" />
+                <ScalarProperty Name="PrModelName" ColumnName="PrModelName" />
+                <ScalarProperty Name="DBarcode" ColumnName="DBarcode" />
+                <ScalarProperty Name="BoxBarCode" ColumnName="BoxBarCode" />
                 <ScalarProperty Name="PrModelId" ColumnName="PrModelId" />
                 <ScalarProperty Name="RmPmId" ColumnName="RmPmId" />
                 <ScalarProperty Name="RmPdId" ColumnName="RmPdId" />

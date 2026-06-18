@@ -4719,6 +4719,8 @@
     <FunctionImport Name="sp_GetDistributionProductionDayShift" ReturnType="Collection(RMILCSDbModel.sp_GetDistributionProductionDayShift_Result)" />
     <FunctionImport Name="sp_GetDistributionProductionNightShift" ReturnType="Collection(RMILCSDbModel.sp_GetDistributionProductionNightShift_Result)" />
     <EntitySet Name="vw_RmilProductDistributionInfo" EntityType="RMILCSDbModel.vw_RmilProductDistributionInfo" />
+    <EntitySet Name="vw_ProductDistributionHistory" EntityType="RMILCSDbModel.vw_ProductDistributionHistory" />
+    <EntitySet Name="vw_ProductDistributionHistoryV" EntityType="RMILCSDbModel.vw_ProductDistributionHistoryV" />
   </EntityContainer>
   <ComplexType Name="GetCostingDetails1_Result">
     <Property Type="Int32" Name="ComplainNo" Nullable="false" />
@@ -5179,5 +5181,53 @@
     <Property Name="MfDate" Type="DateTime" Precision="0" />
     <Property Name="EntryDate" Type="DateTime" Precision="3" />
     <Property Name="SendDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="vw_ProductDistributionHistory">
+    <Key>
+      <PropertyRef Name="PrModelName" />
+      <PropertyRef Name="ModelCode" />
+      <PropertyRef Name="FromDepo" />
+    </Key>
+    <Property Name="BoxBarCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DBarcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrModelName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ModelCode" Type="Int32" Nullable="false" />
+    <Property Name="MfDate" Type="DateTime" Precision="0" />
+    <Property Name="PackedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FromDepo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EntryDate" Type="DateTime" Precision="3" />
+    <Property Name="DealerCode" Type="Int32" />
+    <Property Name="DealerName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DealerAddress" Type="String" MaxLength="450" FixedLength="false" Unicode="true" />
+    <Property Name="VehicleNumber" Type="String" MaxLength="450" FixedLength="false" Unicode="true" />
+    <Property Name="ToDepoName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Depooutsender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Depooutydate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="vw_ProductDistributionHistoryV">
+    <Key>
+      <PropertyRef Name="RmPdId" />
+      <PropertyRef Name="PrModelName" />
+      <PropertyRef Name="ModelCode" />
+      <PropertyRef Name="FromDepo" />
+    </Key>
+    <Property Name="RmPdId" Type="Int64" Nullable="false" />
+    <Property Name="RmPmId" Type="Int64" />
+    <Property Name="PrModelId" Type="Int32" />
+    <Property Name="BoxBarCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DBarcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrModelName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ModelCode" Type="Int32" Nullable="false" />
+    <Property Name="MfDate" Type="DateTime" Precision="0" />
+    <Property Name="PackedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FromDepo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EntryDate" Type="DateTime" Precision="3" />
+    <Property Name="DealerCode" Type="Int32" />
+    <Property Name="DealerName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DealerAddress" Type="String" MaxLength="450" FixedLength="false" Unicode="true" />
+    <Property Name="VehicleNumber" Type="String" MaxLength="450" FixedLength="false" Unicode="true" />
+    <Property Name="ToDepoName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Depooutsender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Depooutydate" Type="DateTime" Precision="3" />
   </EntityType>
 </Schema>

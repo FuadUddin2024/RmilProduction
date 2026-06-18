@@ -71,7 +71,7 @@ namespace RMIL.Prod.Production
             {
                 if (barcode != "")
                 {
-                    var mList = new RmilProdDetailsDa(true).GetModelInfoByBarCodeNew(barcode);
+                    var mList = new RmilProdDetailsDa(true).GetModelInfoByBarCodeNewV(barcode);
 
                     if (mList.Any())
                     {

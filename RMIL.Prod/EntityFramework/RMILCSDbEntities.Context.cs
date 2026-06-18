@@ -214,6 +214,8 @@ namespace RMIL.Prod.EntityFramework
         public DbSet<vw_UserWiseLineList> vw_UserWiseLineList { get; set; }
         public DbSet<vw_WarrantyInfoList> vw_WarrantyInfoList { get; set; }
         public DbSet<vw_RmilProductDistributionInfo> vw_RmilProductDistributionInfo { get; set; }
+        public DbSet<vw_ProductDistributionHistory> vw_ProductDistributionHistory { get; set; }
+        public DbSet<vw_ProductDistributionHistoryV> vw_ProductDistributionHistoryV { get; set; }
     
         [EdmFunction("RMILCSDbEntities", "sayedtvf")]
         public virtual IQueryable<sayedtvf_Result> sayedtvf(Nullable<int> complainNo)
