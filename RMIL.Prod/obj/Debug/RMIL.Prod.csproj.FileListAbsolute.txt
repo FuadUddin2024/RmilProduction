@@ -155,4 +155,3 @@ G:\Service Projects And System After 4.6.26\ALLService Project Code\rmil-product
 G:\Service Projects And System After 4.6.26\ALLService Project Code\rmil-production\RMIL.Prod\bin\ICSharpCode.SharpZipLib.xml
 G:\Service Projects And System After 4.6.26\ALLService Project Code\rmil-production\RMIL.Prod\obj\Debug\RMIL.Prod.dll
 G:\Service Projects And System After 4.6.26\ALLService Project Code\rmil-production\RMIL.Prod\obj\Debug\RMIL.Prod.pdb
-G:\Service Projects And System After 4.6.26\ALLService Project Code\rmil-production\RMIL.Prod\obj\Debug\RMIL.Prod.csprojResolveAssemblyReference.cache

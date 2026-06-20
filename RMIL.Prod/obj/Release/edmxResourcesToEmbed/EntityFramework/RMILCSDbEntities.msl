@@ -4797,5 +4797,39 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="VW_ProductModelBarcodeDetails">
+      <EntityTypeMapping TypeName="RMILCSDbModel.VW_ProductModelBarcodeDetails">
+        <MappingFragment StoreEntitySet="VW_ProductModelBarcodeDetails">
+          <ScalarProperty Name="DBarcode" ColumnName="DBarcode" />
+          <ScalarProperty Name="PrModelName" ColumnName="PrModelName" />
+          <ScalarProperty Name="ModelCode" ColumnName="ModelCode" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_RmilProductBarcodeDetails">
+      <EntityTypeMapping TypeName="RMILCSDbModel.VW_RmilProductBarcodeDetails">
+        <MappingFragment StoreEntitySet="VW_RmilProductBarcodeDetails">
+          <ScalarProperty Name="DBarcode" ColumnName="DBarcode" />
+          <ScalarProperty Name="PrModelName" ColumnName="PrModelName" />
+          <ScalarProperty Name="ModelCode" ColumnName="ModelCode" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DepoToDepoLogFileWeight">
+      <EntityTypeMapping TypeName="RMILCSDbModel.DepoToDepoLogFileWeight">
+        <MappingFragment StoreEntitySet="DepoToDepoLogFileWeight">
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="EntryBy" ColumnName="EntryBy" />
+          <ScalarProperty Name="SentDate" ColumnName="SentDate" />
+          <ScalarProperty Name="SentBy" ColumnName="SentBy" />
+          <ScalarProperty Name="ToDepoID" ColumnName="ToDepoID" />
+          <ScalarProperty Name="FromDepoID" ColumnName="FromDepoID" />
+          <ScalarProperty Name="BarcodeNo" ColumnName="BarcodeNo" />
+          <ScalarProperty Name="DepoLogID" ColumnName="DepoLogID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

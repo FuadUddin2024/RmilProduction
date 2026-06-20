@@ -3405,6 +3405,9 @@
     <Compile Include="EntityFramework\DepoReturnLog.cs">
       <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="EntityFramework\DepoToDepoLogFileWeight.cs">
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="EntityFramework\DepotWeight.cs">
       <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
@@ -3855,6 +3858,9 @@
     <Compile Include="EntityFramework\vw_ProductList.cs">
       <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="EntityFramework\VW_ProductModelBarcodeDetails.cs">
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="EntityFramework\vw_ProductModelList.cs">
       <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
@@ -3913,6 +3919,9 @@
       <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_RmilProdBarCode.cs">
+      <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\VW_RmilProductBarcodeDetails.cs">
       <DependentUpon>RMILCSDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\vw_RmilProductDistributionInfo.cs">

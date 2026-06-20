@@ -290,6 +290,19 @@
           <Property Name="ModifyBy" Type="nvarchar" MaxLength="50" />
           <Property Name="ModifyDate" Type="datetime" />
         </EntityType>
+        <EntityType Name="DepoToDepoLogFileWeight">
+          <Key>
+            <PropertyRef Name="DepoLogID" />
+          </Key>
+          <Property Name="DepoLogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BarcodeNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FromDepoID" Type="int" Nullable="false" />
+          <Property Name="ToDepoID" Type="int" Nullable="false" />
+          <Property Name="SentBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SentDate" Type="datetime" Nullable="false" />
+          <Property Name="EntryBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EntryDate" Type="datetime" Nullable="false" />
+        </EntityType>
         <EntityType Name="DepotWeight">
           <Key>
             <PropertyRef Name="DepotId" />
@@ -3309,6 +3322,19 @@ warning 6002: The table/view 'RMILCSDb.dbo.vw_ProductList' does not have a prima
           <Property Name="InstallationType" Type="nvarchar" MaxLength="10" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'RMILCSDb.dbo.VW_ProductModelBarcodeDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VW_ProductModelBarcodeDetails">
+          <Key>
+            <PropertyRef Name="ProductName" />
+            <PropertyRef Name="ModelCode" />
+            <PropertyRef Name="PrModelName" />
+          </Key>
+          <Property Name="ProductName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ModelCode" Type="int" Nullable="false" />
+          <Property Name="PrModelName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="DBarcode" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'RMILCSDb.dbo.vw_ProductModelList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vw_ProductModelList">
           <Key>
@@ -3716,6 +3742,19 @@ warning 6002: The table/view 'RMILCSDb.dbo.vw_RmilProdBarCode' does not have a p
           <Property Name="ServiceWarDate" Type="date" />
           <Property Name="AfterSalesWarrDate" Type="date" />
           <Property Name="AfterSalesServiceDate" Type="date" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RMILCSDb.dbo.VW_RmilProductBarcodeDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VW_RmilProductBarcodeDetails">
+          <Key>
+            <PropertyRef Name="ProductName" />
+            <PropertyRef Name="ModelCode" />
+            <PropertyRef Name="PrModelName" />
+          </Key>
+          <Property Name="ProductName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ModelCode" Type="int" Nullable="false" />
+          <Property Name="PrModelName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="DBarcode" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RMILCSDb.dbo.vw_RmilProductDistributionInfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -4864,6 +4903,7 @@ warning 6002: The table/view 'RMILCSDb.dbo.vw_WarrantyInfoList' does not have a 
           <EntitySet Name="DemageReturnCost" EntityType="Self.DemageReturnCost" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DepoReturnLog" EntityType="Self.DepoReturnLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DepoToDepoLogFileWeight" EntityType="Self.DepoToDepoLogFileWeight" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DepotWeight" EntityType="Self.DepotWeight" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DepoWiseUserAssign" EntityType="Self.DepoWiseUserAssign" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Designation" EntityType="Self.Designation" Schema="dbo" store:Type="Tables" />
@@ -6260,6 +6300,14 @@ FROM [dbo].[vw_ProductDistributionHistoryV] AS [vw_ProductDistributionHistoryV]<
 [vw_ProductList].[InstallationType] AS [InstallationType]
 FROM [dbo].[vw_ProductList] AS [vw_ProductList]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="VW_ProductModelBarcodeDetails" EntityType="Self.VW_ProductModelBarcodeDetails" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[VW_ProductModelBarcodeDetails].[ProductName] AS [ProductName], 
+[VW_ProductModelBarcodeDetails].[ModelCode] AS [ModelCode], 
+[VW_ProductModelBarcodeDetails].[PrModelName] AS [PrModelName], 
+[VW_ProductModelBarcodeDetails].[DBarcode] AS [DBarcode]
+FROM [dbo].[VW_ProductModelBarcodeDetails] AS [VW_ProductModelBarcodeDetails]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="vw_ProductModelList" EntityType="Self.vw_ProductModelList" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
 [vw_ProductModelList].[PrModelId] AS [PrModelId], 
@@ -6553,6 +6601,14 @@ FROM [dbo].[vw_RmilBoxDetailsV] AS [vw_RmilBoxDetailsV]</DefiningQuery>
 [vw_RmilProdBarCode].[AfterSalesWarrDate] AS [AfterSalesWarrDate], 
 [vw_RmilProdBarCode].[AfterSalesServiceDate] AS [AfterSalesServiceDate]
 FROM [dbo].[vw_RmilProdBarCode] AS [vw_RmilProdBarCode]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VW_RmilProductBarcodeDetails" EntityType="Self.VW_RmilProductBarcodeDetails" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[VW_RmilProductBarcodeDetails].[ProductName] AS [ProductName], 
+[VW_RmilProductBarcodeDetails].[ModelCode] AS [ModelCode], 
+[VW_RmilProductBarcodeDetails].[PrModelName] AS [PrModelName], 
+[VW_RmilProductBarcodeDetails].[DBarcode] AS [DBarcode]
+FROM [dbo].[VW_RmilProductBarcodeDetails] AS [VW_RmilProductBarcodeDetails]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vw_RmilProductDistributionInfo" EntityType="Self.vw_RmilProductDistributionInfo" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -12026,6 +12082,9 @@ FROM [dbo].[vw_WarrantyInfoList] AS [vw_WarrantyInfoList]</DefiningQuery>
           <EntitySet Name="vw_RmilProductDistributionInfo" EntityType="RMILCSDbModel.vw_RmilProductDistributionInfo" />
           <EntitySet Name="vw_ProductDistributionHistory" EntityType="RMILCSDbModel.vw_ProductDistributionHistory" />
           <EntitySet Name="vw_ProductDistributionHistoryV" EntityType="RMILCSDbModel.vw_ProductDistributionHistoryV" />
+          <EntitySet Name="VW_ProductModelBarcodeDetails" EntityType="RMILCSDbModel.VW_ProductModelBarcodeDetails" />
+          <EntitySet Name="VW_RmilProductBarcodeDetails" EntityType="RMILCSDbModel.VW_RmilProductBarcodeDetails" />
+          <EntitySet Name="DepoToDepoLogFileWeight" EntityType="RMILCSDbModel.DepoToDepoLogFileWeight" />
         </EntityContainer>
         <ComplexType Name="GetCostingDetails1_Result">
           <Property Type="Int32" Name="ComplainNo" Nullable="false" />
@@ -12534,6 +12593,41 @@ FROM [dbo].[vw_WarrantyInfoList] AS [vw_WarrantyInfoList]</DefiningQuery>
           <Property Name="ToDepoName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Depooutsender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Depooutydate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="VW_ProductModelBarcodeDetails">
+          <Key>
+            <PropertyRef Name="ProductName" />
+            <PropertyRef Name="ModelCode" />
+            <PropertyRef Name="PrModelName" />
+          </Key>
+          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModelCode" Type="Int32" Nullable="false" />
+          <Property Name="PrModelName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="DBarcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="VW_RmilProductBarcodeDetails">
+          <Key>
+            <PropertyRef Name="ProductName" />
+            <PropertyRef Name="ModelCode" />
+            <PropertyRef Name="PrModelName" />
+          </Key>
+          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModelCode" Type="Int32" Nullable="false" />
+          <Property Name="PrModelName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="DBarcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DepoToDepoLogFileWeight">
+          <Key>
+            <PropertyRef Name="DepoLogID" />
+          </Key>
+          <Property Name="DepoLogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BarcodeNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FromDepoID" Type="Int32" Nullable="false" />
+          <Property Name="ToDepoID" Type="Int32" Nullable="false" />
+          <Property Name="SentBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SentDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EntryBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EntryDate" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -17334,6 +17428,40 @@ FROM [dbo].[vw_WarrantyInfoList] AS [vw_WarrantyInfoList]</DefiningQuery>
                 <ScalarProperty Name="PrModelId" ColumnName="PrModelId" />
                 <ScalarProperty Name="RmPmId" ColumnName="RmPmId" />
                 <ScalarProperty Name="RmPdId" ColumnName="RmPdId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VW_ProductModelBarcodeDetails">
+            <EntityTypeMapping TypeName="RMILCSDbModel.VW_ProductModelBarcodeDetails">
+              <MappingFragment StoreEntitySet="VW_ProductModelBarcodeDetails">
+                <ScalarProperty Name="DBarcode" ColumnName="DBarcode" />
+                <ScalarProperty Name="PrModelName" ColumnName="PrModelName" />
+                <ScalarProperty Name="ModelCode" ColumnName="ModelCode" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VW_RmilProductBarcodeDetails">
+            <EntityTypeMapping TypeName="RMILCSDbModel.VW_RmilProductBarcodeDetails">
+              <MappingFragment StoreEntitySet="VW_RmilProductBarcodeDetails">
+                <ScalarProperty Name="DBarcode" ColumnName="DBarcode" />
+                <ScalarProperty Name="PrModelName" ColumnName="PrModelName" />
+                <ScalarProperty Name="ModelCode" ColumnName="ModelCode" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DepoToDepoLogFileWeight">
+            <EntityTypeMapping TypeName="RMILCSDbModel.DepoToDepoLogFileWeight">
+              <MappingFragment StoreEntitySet="DepoToDepoLogFileWeight">
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="EntryBy" ColumnName="EntryBy" />
+                <ScalarProperty Name="SentDate" ColumnName="SentDate" />
+                <ScalarProperty Name="SentBy" ColumnName="SentBy" />
+                <ScalarProperty Name="ToDepoID" ColumnName="ToDepoID" />
+                <ScalarProperty Name="FromDepoID" ColumnName="FromDepoID" />
+                <ScalarProperty Name="BarcodeNo" ColumnName="BarcodeNo" />
+                <ScalarProperty Name="DepoLogID" ColumnName="DepoLogID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -125,9 +125,36 @@ namespace RMIL.Prod.DAL
         //  Report
         public List<vw_DistributionDetailsVVVV> GetALLDistributionProducts(DateTime StartDate, DateTime EndDate)
         {
-            var q = ObjRmilcsDbEntities.vw_DistributionDetailsVVVV.Where(c => c.EntryDate >= StartDate && c.EntryDate <= EndDate).OrderByDescending(x=>x.SendDate).ToList();
+            var q = ObjRmilcsDbEntities.vw_DistributionDetailsVVVV.Where(c => c.EntryDate >= StartDate && c.EntryDate <= EndDate).OrderByDescending(x => x.SendDate).ToList();
             return q;
         }
 
+        // Get ALl Product barcode
+        public List<VW_ProductModelBarcodeDetails> GetProductDetailsMaster(string Barcode)
+        {
+            var q = ObjRmilcsDbEntities.VW_ProductModelBarcodeDetails.Where(c => c.DBarcode == Barcode).ToList();
+            return q;
+        }
+        public List<VW_RmilProductBarcodeDetails> GetProductDetailsMasterProduct(string Barcode)
+        {
+            var q = ObjRmilcsDbEntities.VW_RmilProductBarcodeDetails.Where(c => c.DBarcode == Barcode).ToList();
+            return q;
+        }
+
+        // Depo to Depo
+        public bool InsertLog(DepoToDepoLogFileWeight LogFile)
+        {
+            try
+            {
+                ObjRmilcsDbEntities.DepoToDepoLogFileWeight.Add(LogFile);
+                ObjRmilcsDbEntities.SaveChanges();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return Convert.ToBoolean("Error:" + ex);
+            }
+        }
     }
 }

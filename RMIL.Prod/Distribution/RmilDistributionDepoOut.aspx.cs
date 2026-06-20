@@ -23,28 +23,10 @@ namespace RMIL.Prod.Distribution
                 {
                     LoadLine();
                     LoadPackagingType();
-                    //mastercartoon.Visible = false;
-                    //singleproduct.Visible = false;
                     Deliverytype();
                     submitall.Visible = false;
-                    delaerdetails.Visible = false;
                     ToLoadLine();
-                    todepo.Visible = false;
                 }
-                else
-                {
-                    if (ddldeliverytype.Text == "Dealer")
-                    {
-                        delaerdetails.Visible = true;
-                    }
-                    else
-                    {
-                        todepo.Visible = true;
-                    }
-                   
-                }
-
-                //txtBarCode.Focus();
             }
             else
             {
@@ -77,50 +59,17 @@ namespace RMIL.Prod.Distribution
             {
                 var modelname = new ProductModelDa(true).GetAllProductModel().Where(x => x.ModelCode == Convert.ToInt32(ModelCode)).FirstOrDefault();
                 ddlmodelname.Text = modelname.PrModelName;
-                todepo.Visible = false;
-            }
-        }
-        protected void ddltodepo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            delaerdetails.Visible = false;
-            todepo.Visible = false;
-            var boxtype = ddldeliverytype.SelectedValue;
-            if (boxtype == "Dealer")
-            {
-                delaerdetails.Visible = true;
-                todepo.Visible = false;
-            }
-            else
-            {
-                delaerdetails.Visible = false;
-                todepo.Visible = true;
-            }
-        }
-        protected void ddldealer_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            DealerSetupDa DealerSetup = new DealerSetupDa();
-            var dealercode = ddldealercode.Text;
-            var dealerdetails =  DealerSetup.GetSingleDealer(Convert.ToInt32(dealercode));
-            if(dealerdetails != null)
-            {
-                ddldealername.Text = dealerdetails.DealerName;
-                ddldealeraddress.Text = dealerdetails.Address;
-            }
-            else
-            {
-                ScriptManager.RegisterStartupScript(Page, typeof(Page), "ClientScript", "alert('Please Enter Correct Dealer Code');", true);
             }
         }
         protected void Deliverytype()
         {
-            var lList = new DAL.DistributionDa().GetAllDistributionType();
+            var lList = new DAL.DistributionDa().GetAllDistributionType().Where(x=>x.Position== "Depo");
             ddldeliverytype.DataSource = lList.OrderBy(c => c.DeliveryTypeName);
             this.ddldeliverytype.DataTextField = "DeliveryTypeName";
             this.ddldeliverytype.DataValueField = "Position";
             ddldeliverytype.DataBind();
             ddldeliverytype.DataSource = lList.OrderBy(c => c.DeliveryTypeName);
             ddldeliverytype.DataBind();
-            ddldeliverytype.Items.Insert(0, new ListItem("---Please Select---", "0"));
         }
         protected void LoadLine()
         {
@@ -158,37 +107,44 @@ namespace RMIL.Prod.Distribution
         private void BindGrid()
         {
             string masterbarcode = ddlmaster.Text;
-            if(Convert.ToInt32(ddlpackagingtype.SelectedValue)==1)
+            if (Convert.ToInt32(ddlpackagingtype.SelectedValue) == 1)
             {
-                if (!string.IsNullOrWhiteSpace(masterbarcode))
+                var assignedProductsList = new DistributionDa(true).GetAllAssingedBox(masterbarcode);
+                var boxbarcodedetails = new DistributionDa(true).GetProductDetailsMaster(masterbarcode).FirstOrDefault();
+                if (assignedProductsList.Count > 0)
                 {
-                    //var assignedProductsList = new DistributionDa(true)
-                    //    .GetAllAssingedBox(masterbarcode).Where(x=>x.IsSent==0).ToList();
-                    var assignedProductsList = new DistributionDa(true)
-                        .GetAllAssingedBox(masterbarcode);
-                    if(assignedProductsList.Count>0)
-                    {
-                        Session["Cart"] = assignedProductsList;
-                        gvCart.DataSource = assignedProductsList;
-                        gvCart.DataBind();
-                        submitall.Visible = true;
-                    }
-                    else
-                    {
-                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alert", "alert('Please Enter Correct Barcode');", true);
-                    }
+                    ddlproductcode.Text = boxbarcodedetails.ModelCode.ToString();
+                    ddlmodelname.Text = boxbarcodedetails.PrModelName;
+                    Session["Cart"] = assignedProductsList;
+                    gvCart.DataSource = assignedProductsList;
+                    gvCart.DataBind();
+                    submitall.Visible = true;
+                }
+                else
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alert", "alert('Please Enter Correct Barcode');", true);
                 }
             }
             else
             {
                 if (!string.IsNullOrWhiteSpace(masterbarcode))
                 {
-                    //var assignedProductsList = new DistributionDa(true)
-                    //    .GetAllAssingedBoxSingle(masterbarcode).Where(x => x.IsSent ==0).ToList();
-                    var assignedProductsList = new DistributionDa(true)
-                        .GetAllAssingedBoxSingle(masterbarcode);
-                    if(assignedProductsList.Count>0)
+                    var assignedProductsList = new DistributionDa(true).GetAllAssingedBoxSingle(masterbarcode).ToList();
+                    var boxbarcodedetails = new DistributionDa(true).GetProductDetailsMaster(assignedProductsList[0].BoxBarCode).FirstOrDefault();
+                    var SingleProductBoxbarcode = new DistributionDa(true).GetProductDetailsMasterProduct(assignedProductsList[0].BoxBarCode).FirstOrDefault();
+                    if (boxbarcodedetails != null)
                     {
+                        ddlproductcode.Text = boxbarcodedetails.ModelCode.ToString();
+                        ddlmodelname.Text = boxbarcodedetails.PrModelName;
+                        Session["Cart"] = assignedProductsList;
+                        gvCart.DataSource = assignedProductsList;
+                        gvCart.DataBind();
+                        submitall.Visible = true;
+                    }
+                    else if (SingleProductBoxbarcode != null)
+                    {
+                        ddlproductcode.Text = SingleProductBoxbarcode.ModelCode.ToString();
+                        ddlmodelname.Text = SingleProductBoxbarcode.PrModelName;
                         Session["Cart"] = assignedProductsList;
                         gvCart.DataSource = assignedProductsList;
                         gvCart.DataBind();
@@ -198,7 +154,6 @@ namespace RMIL.Prod.Distribution
                     {
                         ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alert", "alert('Please Enter Correct Barcode');", true);
                     }
-
                 }
             }
         }
@@ -258,63 +213,39 @@ namespace RMIL.Prod.Distribution
                         if(userassdepoid != null)
                         {
                             var Deponame = new DAL.DepoDa().GetAllDepoList().Where(x => x.DepotId == userassdepoid.DepoID).FirstOrDefault();
-                            if (ddldeliverytype.SelectedValue == "Dealer")
+                            DepoToDepoLogFileWeight LogFile = new DepoToDepoLogFileWeight();
+                            foreach (GridViewRow row in gvCart.Rows)
                             {
-                                foreach (GridViewRow row in gvCart.Rows)
+                                var Packedbarcode = new DistributionDa(true).GetAllSingleDistribution(row.Cells[1].Text).FirstOrDefault();
+                                if (Packedbarcode.IsSend == true)
                                 {
-                                    var Packedbarcode = new DistributionDa(true).GetAllSingleDistribution(row.Cells[1].Text).FirstOrDefault();
-                                    if(Packedbarcode.IsSend==true)
-                                    {
-                                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alert", "alert('Already Sent - " + row.Cells[1].Text + "');", true);
-                                    }
-                                    else
-                                    {
-                                        Packedbarcode.DealerCode = Convert.ToInt32(ddldealercode.Text);
-                                        Packedbarcode.DealerName = ddldealername.Text;
-                                        Packedbarcode.IsSend = true;
-                                        Packedbarcode.Sender = currentUser.UserId;
-                                        Packedbarcode.IsTO = true;
-                                        Packedbarcode.OCSender = currentUser.UserId;
-                                        Packedbarcode.OCSendDate = DateTime.Now;
-                                        Packedbarcode.Position = "Dealer";
-                                        Packedbarcode.StaffId = currentUser.StaffID;
-                                        Packedbarcode.Username = currentUser.UserId;
-                                        Packedbarcode.BarcodeNo = row.Cells[1].Text;
-                                        Packedbarcode.DeliveryTypeID = Convert.ToInt32(ddldeliverytype.SelectedValue);
-                                        Packedbarcode.EntryDate = DateTime.Now;
-                                        Packedbarcode.EntryBy = currentUser.UserId;
-                                        Packedbarcode.SendDate = DateTime.Now;
-                                        Packedbarcode.DealerAddress = ddldealeraddress.Text;
-                                        Packedbarcode.VehicleNumber = ddlVehiclenumber.Text;
-                                        new DistributionDa(true).Update(Packedbarcode);
-                                    }
+                                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alert", "alert('Already Sent - " + row.Cells[1].Text + "');", true);
+                                    return false;
                                 }
-                            }
-                            else
-                            {
-                                foreach (GridViewRow row in gvCart.Rows)
+                                else
                                 {
-                                    var Packedbarcode = new DistributionDa(true).GetAllSingleDistribution(row.Cells[1].Text).FirstOrDefault();
-                                    if(Packedbarcode.IsSend==true)
-                                    {
-                                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alert", "alert('Already Sent - " + row.Cells[1].Text + "');", true);
-                                    }
-                                    else
-                                    {
-                                        Packedbarcode.TodepoID = Convert.ToInt32(ddltodepo.SelectedValue);
-                                        Packedbarcode.ToDepoName = ddltodepo.SelectedItem.Text;
-                                        Packedbarcode.IsSend = true;
-                                        Packedbarcode.SendDate = DateTime.Now;
-                                        Packedbarcode.Sender = currentUser.UserId;
-                                        Packedbarcode.Position = "Depot";
-                                        Packedbarcode.BarcodeNo = row.Cells[1].Text;
-                                        Packedbarcode.DeliveryType = ddldeliverytype.SelectedValue;
-                                        Packedbarcode.EntryDate = DateTime.Now;
-                                        Packedbarcode.EntryBy = currentUser.UserId;
-                                        Packedbarcode.DealerAddress = ddldealeraddress.Text;
-                                        Packedbarcode.VehicleNumber = todepovehiclenumer.Text;
-                                        new DistributionDa(true).Update(Packedbarcode);
-                                    }
+                                    Packedbarcode.TodepoID = Convert.ToInt32(ddltodepo.SelectedValue);
+                                    Packedbarcode.ToDepoName = ddltodepo.SelectedItem.Text;
+                                    Packedbarcode.SendDate = DateTime.Now;
+                                    Packedbarcode.Sender = currentUser.UserId;
+                                    Packedbarcode.Position = "Depot";
+                                    Packedbarcode.BarcodeNo = row.Cells[1].Text;
+                                    Packedbarcode.DeliveryType = ddldeliverytype.SelectedValue;
+                                    Packedbarcode.EntryDate = DateTime.Now;
+                                    Packedbarcode.EntryBy = currentUser.UserId;
+                                    Packedbarcode.DepotId = Deponame.DepotId;
+                                    Packedbarcode.DepotName = Deponame.DepotName;
+                                    Packedbarcode.Sender= currentUser.UserId;
+                                    Packedbarcode.SendDate = DateTime.Now;
+                                    new DistributionDa(true).Update(Packedbarcode);
+                                    LogFile.BarcodeNo= row.Cells[1].Text;
+                                    LogFile.FromDepoID = Deponame.DepotId;
+                                    LogFile.ToDepoID = Convert.ToInt32(ddltodepo.SelectedValue);
+                                    LogFile.SentBy = currentUser.UserId;
+                                    LogFile.SentDate = DateTime.Now;
+                                    LogFile.EntryBy= currentUser.UserId;
+                                    LogFile.EntryDate = DateTime.Now;
+                                    new DistributionDa(true).InsertLog(LogFile);
                                 }
                             }
                             ClearAll();

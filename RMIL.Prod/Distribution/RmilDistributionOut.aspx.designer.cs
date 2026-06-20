@@ -31,6 +31,15 @@ namespace RMIL.Prod.Distribution {
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
+        /// ddlpackagingtype control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlpackagingtype;
+        
+        /// <summary>
         /// ddlmaster control.
         /// </summary>
         /// <remarks>

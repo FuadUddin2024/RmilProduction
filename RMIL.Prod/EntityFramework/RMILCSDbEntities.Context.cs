@@ -216,6 +216,9 @@ namespace RMIL.Prod.EntityFramework
         public DbSet<vw_RmilProductDistributionInfo> vw_RmilProductDistributionInfo { get; set; }
         public DbSet<vw_ProductDistributionHistory> vw_ProductDistributionHistory { get; set; }
         public DbSet<vw_ProductDistributionHistoryV> vw_ProductDistributionHistoryV { get; set; }
+        public DbSet<VW_ProductModelBarcodeDetails> VW_ProductModelBarcodeDetails { get; set; }
+        public DbSet<VW_RmilProductBarcodeDetails> VW_RmilProductBarcodeDetails { get; set; }
+        public DbSet<DepoToDepoLogFileWeight> DepoToDepoLogFileWeight { get; set; }
     
         [EdmFunction("RMILCSDbEntities", "sayedtvf")]
         public virtual IQueryable<sayedtvf_Result> sayedtvf(Nullable<int> complainNo)

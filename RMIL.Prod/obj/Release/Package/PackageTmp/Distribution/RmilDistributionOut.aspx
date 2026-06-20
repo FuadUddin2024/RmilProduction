@@ -81,9 +81,20 @@
                             <div class="panel-body" style="background-color: #99ccff">
                                 <div class="row">
                                       <div class="col-md-4">
+                                        <div class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="control-label col-lg-4">Product Type</label>
+                                                <div class="col-lg-8"> 
+                                                   <asp:DropDownList ID="ddlpackagingtype" runat="server" CssClass="form-control" >
+                                                    </asp:DropDownList>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                      <div class="col-md-4">
                                             <div class="form-horizontal">
                                                 <div class="form-group">
-                                                    <label class="control-label col-lg-4">Master Barcode</label>
+                                                    <label class="control-label col-lg-4">Barcode</label>
                                                     <div class="col-lg-8">
                                                     <asp:TextBox ID="ddlmaster"
                                                             runat="server"
@@ -112,6 +123,8 @@
                                                 </div>
                                             </div>
                                         </div>
+                                </div>
+                                <div class="row">
                                       <div class="col-md-4">
                                             <div class="form-horizontal">
                                                 <div class="form-group">
@@ -122,8 +135,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                </div>
-                                <div class="row">
                                       <div class="col-md-4">
                                             <div class="form-horizontal">
                                                 <div class="form-group">
@@ -146,7 +157,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                      <div class="col-md-4">
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
                                             <div class="form-horizontal">
                                                 <div class="form-group">
                                                     <label class="control-label col-lg-4">Dealer Code</label>
@@ -160,8 +173,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                </div>
-                                <div class="row">
                                     <div class="col-md-4">
                                             <div class="form-horizontal">
                                                 <div class="form-group">
@@ -182,6 +193,9 @@
                                                 </div>
                                             </div>
                                         </div>
+                                  
+                                </div>
+                                <div class="row">
                                     <div class="col-md-4">
                                             <div class="form-horizontal">
                                                 <div class="form-group">

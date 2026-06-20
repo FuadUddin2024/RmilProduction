@@ -4721,6 +4721,9 @@
     <EntitySet Name="vw_RmilProductDistributionInfo" EntityType="RMILCSDbModel.vw_RmilProductDistributionInfo" />
     <EntitySet Name="vw_ProductDistributionHistory" EntityType="RMILCSDbModel.vw_ProductDistributionHistory" />
     <EntitySet Name="vw_ProductDistributionHistoryV" EntityType="RMILCSDbModel.vw_ProductDistributionHistoryV" />
+    <EntitySet Name="VW_ProductModelBarcodeDetails" EntityType="RMILCSDbModel.VW_ProductModelBarcodeDetails" />
+    <EntitySet Name="VW_RmilProductBarcodeDetails" EntityType="RMILCSDbModel.VW_RmilProductBarcodeDetails" />
+    <EntitySet Name="DepoToDepoLogFileWeight" EntityType="RMILCSDbModel.DepoToDepoLogFileWeight" />
   </EntityContainer>
   <ComplexType Name="GetCostingDetails1_Result">
     <Property Type="Int32" Name="ComplainNo" Nullable="false" />
@@ -5229,5 +5232,40 @@
     <Property Name="ToDepoName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Depooutsender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Depooutydate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="VW_ProductModelBarcodeDetails">
+    <Key>
+      <PropertyRef Name="ProductName" />
+      <PropertyRef Name="ModelCode" />
+      <PropertyRef Name="PrModelName" />
+    </Key>
+    <Property Name="ProductName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ModelCode" Type="Int32" Nullable="false" />
+    <Property Name="PrModelName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="DBarcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="VW_RmilProductBarcodeDetails">
+    <Key>
+      <PropertyRef Name="ProductName" />
+      <PropertyRef Name="ModelCode" />
+      <PropertyRef Name="PrModelName" />
+    </Key>
+    <Property Name="ProductName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ModelCode" Type="Int32" Nullable="false" />
+    <Property Name="PrModelName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="DBarcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="DepoToDepoLogFileWeight">
+    <Key>
+      <PropertyRef Name="DepoLogID" />
+    </Key>
+    <Property Name="DepoLogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BarcodeNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FromDepoID" Type="Int32" Nullable="false" />
+    <Property Name="ToDepoID" Type="Int32" Nullable="false" />
+    <Property Name="SentBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SentDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EntryBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EntryDate" Type="DateTime" Nullable="false" Precision="3" />
   </EntityType>
 </Schema>

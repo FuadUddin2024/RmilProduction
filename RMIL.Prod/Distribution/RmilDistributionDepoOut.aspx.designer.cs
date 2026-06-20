@@ -31,6 +31,24 @@ namespace RMIL.Prod.Distribution {
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
+        /// ddlpackagingtype control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlpackagingtype;
+        
+        /// <summary>
+        /// ddlmaster control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox ddlmaster;
+        
+        /// <summary>
         /// ddlproductcode control.
         /// </summary>
         /// <remarks>
@@ -67,60 +85,6 @@ namespace RMIL.Prod.Distribution {
         protected global::System.Web.UI.WebControls.DropDownList ddldeliverytype;
         
         /// <summary>
-        /// delaerdetails control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl delaerdetails;
-        
-        /// <summary>
-        /// ddldealercode control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ddldealercode;
-        
-        /// <summary>
-        /// ddldealername control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ddldealername;
-        
-        /// <summary>
-        /// ddldealeraddress control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ddldealeraddress;
-        
-        /// <summary>
-        /// ddlVehiclenumber control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ddlVehiclenumber;
-        
-        /// <summary>
-        /// todepo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl todepo;
-        
-        /// <summary>
         /// ddltodepo control.
         /// </summary>
         /// <remarks>
@@ -130,31 +94,13 @@ namespace RMIL.Prod.Distribution {
         protected global::System.Web.UI.WebControls.DropDownList ddltodepo;
         
         /// <summary>
-        /// todepovehiclenumer control.
+        /// ddlVehiclenumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox todepovehiclenumer;
-        
-        /// <summary>
-        /// ddlpackagingtype control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlpackagingtype;
-        
-        /// <summary>
-        /// ddlmaster control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ddlmaster;
+        protected global::System.Web.UI.WebControls.TextBox ddlVehiclenumber;
         
         /// <summary>
         /// gvCart control.
